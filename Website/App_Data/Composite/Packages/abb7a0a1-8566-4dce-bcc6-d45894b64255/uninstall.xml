@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Community.Blog.Tags" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="5742081a-f2e5-4a3b-be5c-337f2a1c8b02" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6d6d7b5d-f2a7-4fb5-8462-b92a716e8d10" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="c86abbb1-ba6c-430a-aec9-aa2aba209f80" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f4bd540e-7401-4737-b8f7-2ce63b57e504" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageStructure,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Community.Blog.Entries" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="83b2b1f5-d6b6-40a5-ada3-ef53aa463d0e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="99521b7b-ebd0-484e-a82b-e6424472f4d2" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a8f2f059-58ac-410f-afe1-f89b6989f9cb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="fbbf1ba7-faed-4059-a64d-55e8baeed7db" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Community.Blog.Entries" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="83b2b1f5-d6b6-40a5-ada3-ef53aa463d0e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="99521b7b-ebd0-484e-a82b-e6424472f4d2" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a8f2f059-58ac-410f-afe1-f89b6989f9cb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="fbbf1ba7-faed-4059-a64d-55e8baeed7db" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+              <Key name="PlaceHolderId" value="aside" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+              <Key name="PlaceHolderId" value="aside" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3dcf464f-e81c-4586-9eeb-05fdada47a75" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IDataItemTreeAttachmentPoint,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="6c6726b1-767b-4c81-a541-5b6f71232a08" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

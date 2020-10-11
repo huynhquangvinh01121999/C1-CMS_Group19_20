@@ -1,0 +1,103 @@
+﻿@inherits RazorFunction
+
+@functions {
+
+    override public string FunctionDescription
+    {
+        get { return "A Razor-based function that displays the hierarchy of pages as a tree-like menu."; }
+    }
+
+
+	// C1 Function parameters defined below...
+	[FunctionParameter(Help = "Set from what level start to display items in Composite.Navigation.Distributed", 
+                       DefaultValue = 1)]
+	public int Level { get; set; }
+
+	[FunctionParameter(Label = "Show Parent Page", 
+                       Help = "Check the box if you want parent page to be displayed in navigation", 
+                       DefaultValue = false)]
+    public bool ShowParent { get; set; }
+
+    [FunctionParameter(Label = "Show Child Pages", 
+                       Help = "Check the box if you want child pages to be displayed in navigation", 
+                       DefaultValue = true)]
+	public bool ShowChildPages { get; set; }
+
+	[FunctionParameter(Label = "Expand All", 
+                       Help = "Check the box to expand child pages in Composite.Navigation.Distributed (works only if ShowChildPages=true)", 
+                       DefaultValue = false)]
+	public bool Expand { get; set; }
+
+	[FunctionParameter(Label = "Navigation Id", 
+                       Help = "Attribute Id of DIV element", 
+                       DefaultValue = "NavigationSideBar")]
+	public string NavigationId { get; set; }
+
+	[FunctionParameter(Help = "The page to start displaying the menu from (the website's root page by default)", 
+                       DefaultValue = null)]
+	public NullableDataReference<IPage> StartPage { get; set; }
+
+	
+	private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
+	{
+		var openPages = new List<PageNode>();
+		var openPage = selectedPageNode;
+
+		while (openPage != null)
+		{
+			openPages.Add(openPage);
+			openPage = openPage.ParentPage; // crawl up
+		}
+
+		return openPages;
+	}
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/Distributed")/Styles.css" />
+</head>
+<body>
+<div id="@NavigationId">
+	@if (@StartPage != null && @StartPage.IsSet)
+	{
+		var pageNode = @Sitemap.GetPageNodeById(StartPage.Data.Id);
+        @NavigationTree(pageNode, ShowParent);
+	}
+	else if (OpenPages(@CurrentPageNode).Any(p => p.Level == Level))
+	{
+		var openLevelPage = OpenPages(@CurrentPageNode).First(p => p.Level == Level);
+		@NavigationTree(openLevelPage, ShowParent);
+	}
+</div>
+</body>
+</html>
+@helper NavigationTree(PageNode parentPage, bool includeParent = false)
+	{
+    var pages = parentPage.ChildPages;
+    var isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == parentPage.Id);
+    var isSelected = @CurrentPageNode.Id == parentPage.Id;
+    <ul class="nav nav-pills nav-stacked nav-distributed">
+        @if (includeParent)
+        {
+            <li class="@(isSelected ? " active" : string.Empty)"><a href="@(parentPage.Url)">@parentPage.MenuTitle</a></li>
+        }
+        @if (pages.Any())
+{
+    foreach (var subPage in pages)
+    {
+        if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
+        {
+            isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
+            isSelected = @CurrentPageNode.Id == subPage.Id;
+            <li class="@(isOpen ? "open" : string.Empty)@(isSelected ? " active" : string.Empty)">
+                <a href="@(subPage.Url)">@subPage.MenuTitle</a>
+                @if (ShowChildPages && (isOpen || Expand))
+                {
+                    @NavigationTree(subPage);
+                }
+            </li>
+        }
+    }
+}
+    </ul>
+}

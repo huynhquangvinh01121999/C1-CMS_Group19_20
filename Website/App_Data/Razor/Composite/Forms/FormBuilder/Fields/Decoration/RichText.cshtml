@@ -1,0 +1,26 @@
+﻿@inherits RazorFunction
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A rich text block"; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_RichText_Xhtml_Label, Help = Localization.Constants.Fields_RichText_Xhtml_Help, DefaultValue = null)]
+    public XhtmlDocument Xhtml { get; set; }
+}
+
+@{
+    if(Xhtml == null)
+    {
+        if (FormHelper.GetFormContext().IsPreview)
+        {
+             @Localization.Fields_RichText_Preview 
+        }
+        
+        return;
+    }
+}
+
+@Html.Raw(Xhtml)

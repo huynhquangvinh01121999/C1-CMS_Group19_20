@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="CropElementAction.Label" value="Rogner" />
+  <string key="CropElementAction.ToolTip" value="" />
+  
+  <string key="ImageCropDialog.Title" value="Rogner l&#39;image" />
+  <string key="ImageCropDialog.SaveOptions" value="Enregistrer" />
+  <string key="ImageCropDialog.SaveAsNewFile" value="Comme un nouveau fichier" />
+  <string key="ImageCropDialog.Overwrite" value="Remplacer le fichier existant" />
+  <string key="ImageCropDialog.AspectRatio" value="Ratio" />
+
+  <string key="ImageCropDialog.IncorrectSelection.Title" value="Mauvaise s&#233;lection" />
+  <string key="ImageCropDialog.IncorrectSelection.Message" value="Zone s&#233;lectionn&#233;e est vide ou couvre l&#39;ensemble de l&#39;image" />
+
+  <string key="AspectRatio.None" value="&#192; main lev&#233;e" />
+  <string key="AspectRatio.Landscape" value="Paysage (16:9)" />
+  <string key="AspectRatio.Portrait" value="Portrait (9:16)" />
+</strings>

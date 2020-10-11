@@ -1,0 +1,44 @@
+﻿@inherits RazorFunction
+
+@using Composite.Forms.FormBuilder;
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "An image"; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Image_Image_Label, Help = Localization.Constants.Fields_Image_Image_Help, DefaultValue = null)]
+    public DataReference<IImageFile> Image { get; set; }
+}
+
+@{
+	bool isPreview = FormHelper.GetFormContext().IsPreview;
+	bool useDummyText = Image == null && isPreview;
+
+    IImageFile image = Image != null ? Image.Data : null;
+    string alt = image != null ? image.Title : "";
+    
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+		<div>
+			@if (useDummyText)
+			{
+			    @Localization.Fields_Image_Preview
+			}
+			else
+			{
+                if (image != null)
+				{
+				    <img src="@Html.C1().MediaUrl(image)" 
+				         alt="@alt" 
+                         style="max-width:100%" />
+				}
+			}
+		</div>
+    </body>
+</html>

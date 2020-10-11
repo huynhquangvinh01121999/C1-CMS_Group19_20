@@ -1,0 +1,57 @@
+﻿/* minimal css making things be bearable without bootstrap 3 */
+.formbuilder {
+	/* bootstrat 3.000 - 3.0.2 bug fixes */
+	&.form-horizontal .form-group {
+		/* see https://github.com/twbs/bootstrap/issues/10000 */
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.form-control {
+		display: block;
+	}
+
+	.validationErrors {
+		margin-bottom: 20px;
+	}
+
+	.fileupload ul li:first-child {
+		margin-top: 10px;
+	}
+
+	select option.default {
+		color: #BBB;
+	}
+
+	button[type=submit] {
+		margin-top: 10px;
+	}
+
+	.radio, .checkbox {
+		display: block;
+	}
+
+	.input-group {
+		display: table;
+	}
+
+	.dropdown-menu {
+		display: none;
+	}
+
+	.error {
+		color: red;
+	}
+
+	.text-danger {
+		font-size: 0.8em;
+	}
+}
+
+.required label:nth-of-type(1) abbr:after {
+	content: ' *';
+}
+
+.required label abbr {
+	border-bottom: none;
+}

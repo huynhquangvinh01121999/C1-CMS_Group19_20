@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Razor\PageBlocks\LeadParagraph.cshtml" />
+        <File filename="~\App_Data\Razor\PageBlocks\PageHead.cshtml" />
+        <File filename="~\App_Data\Razor\PageBlocks\Blockquote.cshtml" />
+        <File filename="~\App_Data\Razor\PageBlocks\Table.cshtml" />
+        <File filename="~\App_Data\Razor\PageBlocks\ImageAndText.cshtml" />
+        <File filename="~\App_Data\Razor\PageBlocks\IconifiedText.cshtml" />
+        <File filename="~\App_Data\Components\LeadParagraph.xml" />
+        <File filename="~\App_Data\Components\PageTitleAndLeadParagraph.xml" />
+        <File filename="~\App_Data\Components\Blockquote.xml" />
+        <File filename="~\App_Data\Components\Table.xml" />
+        <File filename="~\App_Data\Components\ImageAndText.xml" />
+        <File filename="~\App_Data\Components\IconifiedText.xml" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

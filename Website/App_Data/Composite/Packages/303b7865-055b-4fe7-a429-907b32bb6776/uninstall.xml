@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
+        <File filename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
+        <File filename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Authors.xml" />
+        <File filename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" />
+        <File filename="~\BlogRssFeed.ashx" />
+        <File filename="~\BlogMetaWeblog.ashx" />
+        <File filename="~\Bin\Composite.Community.Blog.dll" />
+        <File filename="~\App_Data\Razor\Composite\Community\Blog\Archive.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Community\Blog\BlogRenderer.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Community\Blog\Comments.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Community\Blog\Latest.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Community\Blog\TagsList.cshtml" />
+        <File filename="~\App_GlobalResources\Composite.Community.Blog\Blog.resx" />
+        <File filename="~\Composite\InstalledPackages\content\forms\Composite.Community.Blog\ImportFromRss.xml" />
+        <File filename="~\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\BlogTagMultiSelector.ascx" />
+        <File filename="~\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\BlogTagMultiSelector.ascx.cs" />
+        <File filename="~\Frontend\Composite\Community\Blog\comment_bulb.png" />
+        <File filename="~\Frontend\Composite\Community\Blog\Styles.css" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\Bin\CookComputing.XmlRpcV2.dll" version="2.5.0.0" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type typeId="e156b1c2-de05-46df-82d7-2507efb69d3d" />
+        <Type typeId="aa6cb396-57c9-4f39-9a42-bfbf7a4bd133" />
+        <Type typeId="60693bea-2993-4a84-9277-d65ced862ba1" />
+        <Type typeId="8016be2f-fb8e-422a-b477-3ea534f2ae1f" />
+      </Types>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Community.Blog.TagType" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="284c4499-caf8-4f56-b907-f49cc7b99462" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Community.Blog.Tags" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="a4fcc0ad-292f-40f8-bf3c-34cd7872ce73" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="15276460-fbc3-4ab4-a7c7-e8fccb47384b" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageType,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="bea4f923-4b10-44e7-b290-c2c0ca671ea7" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Community.Blog.Authors" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="42277379-0c5c-4492-87b5-76c86dadc3f8" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageTypeDefaultPageContent,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="431c2ee1-0fec-4536-9742-a17a2c2da7bf" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="471430b7-e8b0-4a67-a85a-95da17010526" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageTypeTreeLink,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="8d8eac91-02a8-4d44-9ddc-4f10550f026a" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller,Composite">
+      <XslFiles xmlns="">
+        <XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" />
+        <XslFile pathXml="~\App_Data\Composite\Composite.config" installXsl="~\Composite.Config\Install.xsl" uninstallXsl="~\Composite.Config\Uninstall.xsl" />
+      </XslFiles>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

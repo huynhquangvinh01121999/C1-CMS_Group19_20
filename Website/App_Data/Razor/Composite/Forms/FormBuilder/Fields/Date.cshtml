@@ -1,0 +1,115 @@
+﻿@inherits RazorFunction
+@using System.Globalization
+@using System.Threading
+@using Composite.Core.WebClient
+@using Composite.Forms.FormBuilder
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "A text area."; }
+	}
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue=null)]
+	public string Name { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+	public string Label { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_PlaceholderText_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_PlaceholderText_Help)]
+	public string PlaceholderText { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public string Help { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Required_Label, DefaultValue = false, Help = Localization.Constants.Fields_Parameters_Required_Help)]
+    public bool Required { get; set; }
+    
+	private string Format
+	{
+		get { return Thread.CurrentThread.CurrentUICulture.DateTimeFormat.ShortDatePattern; }
+	}
+
+	private string DatePickerFormat
+	{
+		get { return Format.Replace("M", "m"); }
+	}
+
+	private string DateToString(DateTime value)
+	{
+		return value.ToString(Format);
+	}
+}
+
+@{
+    Name = string.IsNullOrEmpty(Name) ? Label : Name;
+	string requiredClass = Required ? "required" : "";
+
+    var formContext = FormHelper.GetFormContext();
+    string clientId = formContext.BuildFieldClientId(Name);
+    
+
+	DateTime value = DateTime.MinValue;
+
+	if (!formContext.IsFormSubmit)
+	{
+		// value = DateTime.Today;
+	}
+	else
+    {
+        string postedValue = Request[clientId];
+
+        if(!string.IsNullOrEmpty(postedValue)) 
+        {
+			try 
+			{
+				value = DateTime.ParseExact(postedValue, Format, CultureInfo.InvariantCulture);
+				formContext.Result.Add(Name, Label, typeof(DateTime), value);
+			} 
+			catch( Exception )
+			{
+				formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_DateFormatWrong, Label, DatePickerFormat));
+			}
+        }
+	}
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script type="text/javascript" src="@UrlUtils.PublicRootPath/Frontend/Composite/Forms/FormBuilder/datepicker/bootstrap-datepicker.js"></script>
+	<link href="@UrlUtils.PublicRootPath/Frontend/Composite/Forms/FormBuilder/datepicker/datepicker.css" rel="stylesheet" />
+    <script id="datePickerInit" type="text/javascript">
+        $(function () {
+            $('.input-group.date').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+            }).on("changeDate", function (ev) { $(this).find("input").valid(); });
+        });
+    </script>
+</head>
+<body>
+    <div class="form-group @clientId @requiredClass">
+        <label for="@clientId" class="control-label">
+            @Label @if (Required) { <abbr title="@Resources.FormBuilder.WCAG_required"></abbr> }
+        </label>
+
+        <div class="input-group date" data-date="@(value != DateTime.MinValue ? DateToString(value) : null)" data-date-format="@DatePickerFormat" style="width: 15em;">
+            <input	type="text" 
+	                  class="form-control no-submit" 
+	                  required="@(Required ? "required" : null)"
+	                  value="@(value != DateTime.MinValue ? DateToString(value) : Request[clientId])" 
+					  placeholder="@PlaceholderText"
+	                  id="@clientId" 
+	                  name="@clientId"
+					  onclick="document.getElementById('@(clientId)_button').click()" />
+            <span class="input-group-addon" id="@(clientId)_button"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+
+        @if(!string.IsNullOrWhiteSpace(Help)) 
+		{
+		    <p class="help-block">@Help</p>
+		}
+    </div>
+</body>
+</html>
+

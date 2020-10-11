@@ -1,0 +1,87 @@
+﻿@using Composite.Forms.FormBuilder
+@{
+    Layout = "~/Composite/Controls/Razor/RazorLayout.cshtml";
+
+    string formName = Request.QueryString["form"];
+
+    var formsData = CommonFileUtils.GetFormData(formName);
+}
+
+@section HtmlHead {
+    <link rel="stylesheet" type="text/css" href="browse.css.aspx" />
+}
+
+<ui:page label="@formName">
+    <ui:scrollbox id="scrollbox">
+        <table style="padding-top: 30px;" class="table table-bordered">
+            <thead>
+                <tr class="head">
+                    <th><b> @Localization.Browse_TimeStamp </b></th>
+
+                    @foreach (var fieldName in formsData.FieldNames)
+                    {
+                        <th> <b>@fieldName</b></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var form in formsData.Forms.OrderByDescending(f => f.TimeStamp))
+                {
+                    <tr>
+                        <td> @form.TimeStamp </td>
+
+                        @foreach (var fieldName in formsData.FieldNames)
+                        {
+                            <td>
+                                @if (form.Fields.ContainsKey(fieldName))
+                                {
+                                    var field = form.Fields[fieldName];
+
+                                    if (field is SavedFormFile.FileField)
+                                    {
+                                        var file = field as SavedFormFile.FileField;
+
+                                        <a href="@file.GetDownloadUrl()" target="_blank">
+                                            @file.FileName
+                                        </a>
+                                    }
+                                    else if (field is SavedFormFile.MultiFileField)
+                                    {
+                                        foreach (var file in (field as SavedFormFile.MultiFileField).Files)
+                                        {
+                                            <div>
+                                                <a href="@file.GetDownloadUrl()" target="_blank">
+                                                    @file.FileName
+                                                </a>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (field.Value is DateTime)
+                                        {
+                                            var date = (DateTime)field.Value;
+                                            if (date.Hour == 0 && date.Minute == 0 && date.Second == 0)
+                                            {
+                                                @date.ToShortDateString()
+                                            }
+                                            else
+                                            {
+                                                @date.ToString()
+                                            }
+                                        }
+                                        else
+                                        {
+                                            @field.Value
+                                        }
+                                    }
+                                }
+                            </td>
+                        }
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </ui:scrollbox>
+</ui:page>

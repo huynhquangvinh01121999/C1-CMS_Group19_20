@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.FontAwesome.GetIconNames.cs" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\css/font-awesome.css" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\css/font-awesome.min.css" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\fonts/fontawesome-webfont.eot" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\fonts/fontawesome-webfont.svg" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\fonts/fontawesome-webfont.ttf" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\fonts/fontawesome-webfont.woff" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\fonts/fontawesome-webfont.woff2" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\fonts/FontAwesome.otf" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/animated.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/bordered-pulled.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/core.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/fixed-width.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/font-awesome.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/icons.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/larger.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/list.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/mixins.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/path.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/rotated-flipped.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/screen-reader.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/stacked.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\less/variables.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/font-awesome.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_animated.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_bordered-pulled.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_core.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_fixed-width.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_icons.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_larger.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_list.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_mixins.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_path.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_rotated-flipped.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_screen-reader.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_stacked.scss" />
+        <File filename="~\Frontend\Orckestra\Web\Html\FontAwesome\scss/_variables.scss" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IInlineFunction,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="82c6fe3c-5b46-4352-8e77-5d6dce8d0c20" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="a5b29718-c83c-449c-8f06-37331452cdd3" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f2c84f01-8c3b-4716-83df-13b37e0ee391" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

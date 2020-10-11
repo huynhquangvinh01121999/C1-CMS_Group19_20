@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Media\038441ad-4b72-4da6-9bb6-e39edd4ed013" />
+        <File filename="~\App_Data\Media\05637cb3-be1a-432f-bffe-5ef5c0661ea5" />
+        <File filename="~\App_Data\Media\095aa120-7bf5-412a-b4ee-be9d3a1773c9" />
+        <File filename="~\App_Data\Media\0b11c288-5432-4482-a776-3eb0ac9ad437" />
+        <File filename="~\App_Data\Media\199240bd-3166-496c-b2d1-a676f642ec26" />
+        <File filename="~\App_Data\Media\2a402f8c-a108-4b72-8e8e-0a6ef95b8637" />
+        <File filename="~\App_Data\Media\2d3da31a-9b96-48d0-845b-478fb6203d2e" />
+        <File filename="~\App_Data\Media\2ddf8982-ba9e-4f6a-a1df-bbc07016dddb" />
+        <File filename="~\App_Data\Media\2eb8ffd9-81b9-49fe-a573-c76b255f2f49" />
+        <File filename="~\App_Data\Media\370eca2e-e434-4b1b-9e57-5087a7831b12" />
+        <File filename="~\App_Data\Media\38a5e297-bc3d-4190-be7a-789a925ca64e" />
+        <File filename="~\App_Data\Media\3d5c94e6-b0a9-4226-9514-48cdd7d50139" />
+        <File filename="~\App_Data\Media\40ef35a6-2ed9-4daa-a5db-c47ecc13e6d6" />
+        <File filename="~\App_Data\Media\43aa8b6b-6406-418d-a155-c3acdb63a42f" />
+        <File filename="~\App_Data\Media\49f6bd2f-9477-4bfe-8abf-a162c1935643" />
+        <File filename="~\App_Data\Media\5034385a-014e-4cbe-b032-00dc490b9d19" />
+        <File filename="~\App_Data\Media\68d15a7c-6afb-4849-afa8-df2873e219d9" />
+        <File filename="~\App_Data\Media\693bee77-c208-4e1b-9597-cd43414891a0" />
+        <File filename="~\App_Data\Media\6aee4108-9475-4cd0-99c8-319a8bdf477f" />
+        <File filename="~\App_Data\Media\6f268676-6109-469e-9f74-797fc6a06ab6" />
+        <File filename="~\App_Data\Media\6f94d001-4a10-476e-abec-fa86fdbb9a3c" />
+        <File filename="~\App_Data\Media\70125800-cd41-4eb0-844e-bf32c0f7c080" />
+        <File filename="~\App_Data\Media\74114161-70b5-407e-a3d5-22c78d9e216c" />
+        <File filename="~\App_Data\Media\79715853-2d99-4a85-918b-3b18d0d48701" />
+        <File filename="~\App_Data\Media\892acdb5-cbca-4c90-9d0f-f842cb4dfae0" />
+        <File filename="~\App_Data\Media\8ab4b82a-cb2a-4ef7-954b-f88f52e6783e" />
+        <File filename="~\App_Data\Media\8bce73d1-b3ca-404b-8e0b-02b991c24870" />
+        <File filename="~\App_Data\Media\9132965e-4a0b-48f1-9585-0bfe42aacefa" />
+        <File filename="~\App_Data\Media\91f98350-2475-4daf-be1d-593072a28b6b" />
+        <File filename="~\App_Data\Media\928bfd99-84a0-41d2-b504-0f1dbc1fd876" />
+        <File filename="~\App_Data\Media\9451f3f7-24f0-4b25-806a-809f8b3b9a61" />
+        <File filename="~\App_Data\Media\969705d6-adc5-4311-8186-641e59bbbddb" />
+        <File filename="~\App_Data\Media\a5ad2644-186b-47f6-8e58-892d381d2006" />
+        <File filename="~\App_Data\Media\a9c279ad-ba49-4573-8951-285d310d9146" />
+        <File filename="~\App_Data\Media\b183734e-a8cc-449d-ba79-6cab6e3a9bdf" />
+        <File filename="~\App_Data\Media\b2614f26-fab2-4747-8e29-b19e7599da96" />
+        <File filename="~\App_Data\Media\b72125aa-5828-463b-8548-f43d65ee33e0" />
+        <File filename="~\App_Data\Media\bb4b8072-3e31-47d6-ada9-84077a86eee3" />
+        <File filename="~\App_Data\Media\c50bbc07-8aba-4a53-b73f-7cee6d06a8e9" />
+        <File filename="~\App_Data\Media\d20e8a0f-359b-473d-9640-6f75318ba0fb" />
+        <File filename="~\App_Data\Media\d6942b16-9051-41a0-986f-0ac0cd28e427" />
+        <File filename="~\App_Data\Media\d8d38053-d3f6-4300-a55c-db8107241d35" />
+        <File filename="~\App_Data\Media\edf8d4a6-7e4f-4785-ab12-bf1f66f6c820" />
+        <File filename="~\App_Data\Media\f74ee284-71df-4efb-90fe-bd7441e998d1" />
+        <File filename="~\App_Data\Media\fb1ab5cf-6c20-46ec-9c3b-64356c9b0aec" />
+        <File filename="~\App_Data\Media\ffc1b94f-1998-4e65-afcc-44873906862d" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IMediaFileData,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="038441ad-4b72-4da6-9bb6-e39edd4ed013" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="05637cb3-be1a-432f-bffe-5ef5c0661ea5" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="095aa120-7bf5-412a-b4ee-be9d3a1773c9" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="0b11c288-5432-4482-a776-3eb0ac9ad437" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="199240bd-3166-496c-b2d1-a676f642ec26" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="2a402f8c-a108-4b72-8e8e-0a6ef95b8637" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="2d3da31a-9b96-48d0-845b-478fb6203d2e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="2ddf8982-ba9e-4f6a-a1df-bbc07016dddb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="2eb8ffd9-81b9-49fe-a573-c76b255f2f49" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="370eca2e-e434-4b1b-9e57-5087a7831b12" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="38a5e297-bc3d-4190-be7a-789a925ca64e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3d5c94e6-b0a9-4226-9514-48cdd7d50139" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="40ef35a6-2ed9-4daa-a5db-c47ecc13e6d6" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="43aa8b6b-6406-418d-a155-c3acdb63a42f" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="49f6bd2f-9477-4bfe-8abf-a162c1935643" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="5034385a-014e-4cbe-b032-00dc490b9d19" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="68d15a7c-6afb-4849-afa8-df2873e219d9" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="693bee77-c208-4e1b-9597-cd43414891a0" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6aee4108-9475-4cd0-99c8-319a8bdf477f" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6f268676-6109-469e-9f74-797fc6a06ab6" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6f94d001-4a10-476e-abec-fa86fdbb9a3c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="70125800-cd41-4eb0-844e-bf32c0f7c080" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="74114161-70b5-407e-a3d5-22c78d9e216c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="79715853-2d99-4a85-918b-3b18d0d48701" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="892acdb5-cbca-4c90-9d0f-f842cb4dfae0" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="8ab4b82a-cb2a-4ef7-954b-f88f52e6783e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="8bce73d1-b3ca-404b-8e0b-02b991c24870" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="9132965e-4a0b-48f1-9585-0bfe42aacefa" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="91f98350-2475-4daf-be1d-593072a28b6b" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="928bfd99-84a0-41d2-b504-0f1dbc1fd876" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="9451f3f7-24f0-4b25-806a-809f8b3b9a61" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="969705d6-adc5-4311-8186-641e59bbbddb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a5ad2644-186b-47f6-8e58-892d381d2006" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a9c279ad-ba49-4573-8951-285d310d9146" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b183734e-a8cc-449d-ba79-6cab6e3a9bdf" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b2614f26-fab2-4747-8e29-b19e7599da96" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b72125aa-5828-463b-8548-f43d65ee33e0" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="bb4b8072-3e31-47d6-ada9-84077a86eee3" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="c50bbc07-8aba-4a53-b73f-7cee6d06a8e9" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="d20e8a0f-359b-473d-9640-6f75318ba0fb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="d6942b16-9051-41a0-986f-0ac0cd28e427" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="d8d38053-d3f6-4300-a55c-db8107241d35" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="edf8d4a6-7e4f-4785-ab12-bf1f66f6c820" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f74ee284-71df-4efb-90fe-bd7441e998d1" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="fb1ab5cf-6c20-46ec-9c3b-64356c9b0aec" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="ffc1b94f-1998-4e65-afcc-44873906862d" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IMediaFolderData,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="5cb7e696-9252-407b-b650-32d2540cd237" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7a4b3d38-efac-4401-92aa-edb96d2cc43b" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

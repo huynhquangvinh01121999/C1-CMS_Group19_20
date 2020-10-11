@@ -1,0 +1,125 @@
+<FormBuilder xmlns:f="http://www.composite.net/ns/function/1.0">
+  <BlobStorage blobConnectionString="" websiteContainerName="" />
+  <Fields>
+    <FieldGroup label="${Composite.Forms.FormBuilder,FieldGroup.Standard}">
+      <Field name="textbox" label="${Composite.Forms.FormBuilder,Fields.TextBox}" icon="icon-textbox" descriptionParameters="PlaceholderText,Help" validationParameters="Required,MaxLength" advancedParameters="Name,DefaultValue">
+        <f:function name="Composite.Forms.FormBuilder.Fields.TextBox">
+        </f:function>
+      </Field>
+      <Field name="textarea" label="${Composite.Forms.FormBuilder,Fields.TextArea}" icon="icon-textarea" descriptionParameters="PlaceholderText,Help" validationParameters="Required,MaxLength" advancedParameters="Name,DefaultValue">
+        <f:function name="Composite.Forms.FormBuilder.Fields.TextArea">
+        </f:function>
+      </Field>
+      <Field name="checkbox" label="${Composite.Forms.FormBuilder,Fields.CheckBox}" descriptionParameters="Help" icon="icon-checkbox" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.CheckBox">
+        </f:function>
+      </Field>
+      <Field name="checkboxlist" label="${Composite.Forms.FormBuilder,Fields.CheckBoxList}" icon="icon-list" descriptionParameters="Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.CheckBoxList">
+        </f:function>
+      </Field>
+      <Field name="dropdown" label="${Composite.Forms.FormBuilder,Fields.DropDown}" icon="icon-dropdown" descriptionParameters="PlaceholderText,Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Selector">
+          <f:param name="SelectMultiple" value="false" />
+        </f:function>
+      </Field>
+      <Field name="multiselector" label="${Composite.Forms.FormBuilder,Fields.MultiSelector}" icon="icon-multipledropdown" descriptionParameters="Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Selector">
+          <f:param name="SelectMultiple" value="true" />
+          <f:param name="PlaceholderText" value="" />
+        </f:function>
+      </Field>
+      <Field name="radiobuttons" label="${Composite.Forms.FormBuilder,Fields.RadioButtons}" icon="icon-list" descriptionParameters="Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.RadioSelector">
+        </f:function>
+      </Field>
+      <Field name="date" label="${Composite.Forms.FormBuilder,Fields.Date}" descriptionParameters="PlaceholderText,Help" icon="icon-calendar" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Date">
+        </f:function>
+      </Field>
+      <Field name="email" label="${Composite.Forms.FormBuilder,Fields.Email}" icon="icon-emailfield" descriptionParameters="PlaceholderText,Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Email">
+        </f:function>
+      </Field>
+      <Field name="file" label="${Composite.Forms.FormBuilder,Fields.FileUpload}" icon="icon-fileupload" descriptionParameters="ButtonText,Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.FileUpload">
+          <f:param name="MaxSize" value="10485760" />
+          <f:param name="Capture" value="false" />
+          <f:param name="Accept" value="" />
+        </f:function>
+      </Field>
+      <Field name="multiplefiles" label="${Composite.Forms.FormBuilder,Fields.MultiFileUpload}" icon="icon-multiplefileupload" descriptionParameters="ButtonText,Help" validationParameters="MaxFileCount,Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.MultipleFileUpload">
+          <f:param name="MaxSize" value="20971520" />
+          <f:param name="Accept" value="" />
+        </f:function>
+      </Field>
+      <Field name="image" label="${Composite.Forms.FormBuilder,Fields.ImageUpload}" icon="icon-imageupload" descriptionParameters="ButtonText,Help" validationParameters="Required" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.FileUpload">
+          <f:param name="MaxSize" value="10485760" />
+          <f:param name="Accept" value="image/*" />
+          <f:param name="Capture" value="true" />
+        </f:function>
+      </Field>
+      <Field name="multipleimages" label="${Composite.Forms.FormBuilder,Fields.MultipleImageUpload}" icon="icon-multipleimageupload" descriptionParameters="ButtonText,Help" validationParameters="Required,MaxFileCount" advancedParameters="Name">
+        <f:function name="Composite.Forms.FormBuilder.Fields.MultipleFileUpload">
+          <f:param name="MaxSize" value="20971520" />
+          <f:param name="Accept" value="image/*" />
+        </f:function>
+      </Field>
+    </FieldGroup>
+    <FieldGroup label="${Composite.Forms.FormBuilder,FieldGroup.TextAndDecorations}">
+      <Field name="decoration-heading" label="${Composite.Forms.FormBuilder,Fields.Decoration.Heading}" icon="icon-pencil-2">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Decoration.Heading" />
+      </Field>
+      <Field name="decoration-text" label="${Composite.Forms.FormBuilder,Fields.Decoration.Text}" icon="icon-pencil">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Decoration.Text" />
+      </Field>
+      <Field name="decoration-richtext" label="${Composite.Forms.FormBuilder,Fields.Decoration.RichText}" icon="icon-profile">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Decoration.RichText" />
+      </Field>
+      <Field name="decoration-separator" label="${Composite.Forms.FormBuilder,Fields.Decoration.Separator}" icon="icon-minus">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Decoration.Separator" />
+      </Field>
+      <Field name="decoration-image" label="${Composite.Forms.FormBuilder,Fields.Decoration.Image}" icon="icon-image-2">
+        <f:function name="Composite.Forms.FormBuilder.Fields.Decoration.Image" />
+      </Field>
+    </FieldGroup>
+  </Fields>
+  <Actions>
+    <Action name="SaveToFile" label="${Composite.Forms.FormBuilder,Actions.SaveToFile.Label}" help="${Composite.Forms.FormBuilder,Actions.SaveToFile.Help}">
+      <f:function name="Composite.Forms.FormBuilder.Handlers.SaveToFile">
+      </f:function>
+    </Action>
+    <Action name="SendEmail" label="${Composite.Forms.FormBuilder,Actions.SendEmail.Label}" help="${Composite.Forms.FormBuilder,Actions.SendEmail.Help}">
+      <f:function name="Composite.Forms.FormBuilder.Handlers.SendEmail">
+      </f:function>
+    </Action>
+  </Actions>
+  <SecurityHandlers>
+    <!-- IF THE WEBSITE HAS HTTPS SUPPORT UNCOMMENT THE ELEMENT BELOW TO ENABLE A "Force HTTPS" SECURITY RULE
+    
+    <SecurityHandler name="Https" label="${Composite.Forms.FormBuilder,SecurityHandlers.Https.Label}">
+      <Prerequisites>
+        <f:function name="Composite.Forms.FormBuilder.Handlers.HttpsCheck">
+        </f:function>
+      </Prerequisites>
+      <Postrequisites>
+      </Postrequisites>
+    </SecurityHandler>
+    
+    -->
+    
+    <SecurityHandler name="Default"  label="${Composite.Forms.FormBuilder,SecurityHandlers.Default.Label}">
+      <Prerequisites>
+      </Prerequisites>
+      <Postrequisites>
+      </Postrequisites>
+    </SecurityHandler>
+  </SecurityHandlers>
+  <FieldEditor>
+    <Styles>
+      <Style file="~/Frontend/Composite/Forms/FormBuilder/Styles/FormBuilderPreview.less" />
+    </Styles>
+  </FieldEditor>
+</FormBuilder>

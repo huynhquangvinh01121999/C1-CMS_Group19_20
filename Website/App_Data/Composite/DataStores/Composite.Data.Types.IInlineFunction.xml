@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<InlineFunctionElementsElements>
+  <InlineFunctionElements Id="82c6fe3c-5b46-4352-8e77-5d6dce8d0c20" Name="GetIconNames" Namespace="Orckestra.Web.Html.FontAwesome" Description="" CodePath="Orckestra.Web.Html.FontAwesome.GetIconNames.cs" />
+  <InlineFunctionElements Id="eec8701c-70ed-45a2-a14b-da871eb9f338" Name="GetStyleOptionsFromFile" Namespace="Orckestra.Web.Html" Description="" CodePath="Orckestra.Web.Html.GetStyleOptionsFromFile.cs" />
+</InlineFunctionElementsElements>

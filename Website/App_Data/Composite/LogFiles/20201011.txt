@@ -1,0 +1,106 @@
+﻿20201011 14:32:20.2544 2 25 Information SetupServiceFacade RGB(255, 55, 85) Downloading packages
+20201011 14:32:52.6303 2 25 Information SetupServiceFacade RGB(255, 55, 85) Setting up the system for the first time
+20201011 14:32:54.1198 2 25 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IFlowInformation'. Rows: 0, Updated: 0, Errors: 0
+20201011 14:32:54.1287 2 25 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserActivePerspective'. Rows: 0, Updated: 0, Errors: 0
+20201011 14:32:54.1388 2 25 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserGroupActivePerspective'. Rows: 0, Updated: 0, Errors: 0
+20201011 14:32:54.1518 2 25 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserGroupPermissionDefinition'. Rows: 0, Updated: 0, Errors: 0
+20201011 14:32:54.1627 2 25 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserPermissionDefinition'. Rows: 0, Updated: 0, Errors: 0
+20201011 14:32:54.1707 2 25 Information SetupServiceFacade RGB(255, 55, 85) Creating first locale: vi-VN
+20201011 14:32:54.9726 2 25 Information SetupServiceFacade RGB(255, 55, 85) Creating first user: admin
+20201011 14:32:56.3117 2 25 Information PackageManagerInstallProcess  Installing package: Base Configuration for C1, Version: 2.0.2, Id = 01292282-3cb3-4d87-851f-da49ef547f8a; User name: 'admin'
+20201011 14:32:56.3665 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:32:56.4283 2 25 Information PackageManagerInstallProcess  Installing package: Basic Usergroup Configuration for C1, Version: 2.0.1, Id = 9b6b0ea9-1f21-4692-aff8-bc9dd33cabec; User name: 'admin'
+20201011 14:32:56.4981 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:32:56.5280 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Navigation.LanguageSwitcher.Razor, Version: 2.0.7, Id = e899e5e7-bbeb-40bd-b236-b77102718772; User name: 'admin'
+20201011 14:32:56.5549 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:32:56.5769 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Navigation.Distributed.Razor, Version: 2.0.1, Id = 8b5441b9-4622-4392-a413-5a8f79c17032; User name: 'admin'
+20201011 14:32:56.6031 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:32:56.6500 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Css.Less, Version: 1.3.3, Id = b1b27757-a065-41fd-91b0-e8e5f2a0e8d0; User name: 'admin'
+20201011 14:33:04.0029 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:04.0498 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.FontAwesome, Version: 1.0.0, Id = 41a3542b-41fb-4c42-984d-4b92f66b2088; User name: 'admin'
+20201011 14:33:04.3649 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:04.4258 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.BundlingAndMinification, Version: 2.0.3, Id = 83472ca2-e38e-44f3-9d10-8194b23fdee8; User name: 'admin'
+20201011 14:33:04.6418 2 25 Information DllPackageFragmentInstaller  Overwriting existing file '~\Bin\Orckestra.Web.Css.CompileFoundation.dll' version '1.0.0.0', new version is '1.0.1.0'
+20201011 14:33:04.8095 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:04.8405 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Web.Config.Html5MimeTypes, Version: 1.0.7, Id = 00a9f643-684c-4fec-ae45-2d9d9547d747; User name: 'admin'
+20201011 14:33:04.8803 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:05.7911 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Forms.FormBuilder, Version: 1.3.3, Id = b540f296-420d-44ef-b83e-d067850b2381; User name: 'admin'
+20201011 14:33:08.0816 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:09.1388 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Media.ImageCrop, Version: 1.1.0, Id = 307927b4-600b-45d9-a61a-437d4ffe9ebf; User name: 'admin'
+20201011 14:33:09.9657 2 25 Information Composite.Localization.C1Console.FragmentInstaller  Start fixing Composite.config
+20201011 14:33:09.9806 2 25 Information Composite.Localization.C1Console.FragmentInstaller  Composite.config - fixed..
+20201011 14:33:09.9926 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:10.1367 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Community.Blog, Version: 2.5.2, Id = 303b7865-055b-4fe7-a429-907b32bb6776; User name: 'admin'
+20201011 14:33:12.9746 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:12.9955 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Media.YouTube, Version: 2.0.8, Id = f19a2878-d14d-431c-8f3e-14367b553c82; User name: 'admin'
+20201011 14:33:13.0244 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:13.0554 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Media.ImageGallery.Slimbox2, Version: 1.2.1, Id = e41ec59b-1e4c-42e9-8682-21806ae3072b; User name: 'admin'
+20201011 14:33:13.2313 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:13.3879 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Tools.LinkChecker, Version: 1.0.1, Id = eb94930c-4bdf-478b-b779-6ef617f3aec2; User name: 'admin'
+20201011 14:33:13.5843 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:13.6262 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Search.WebsiteSearch, Version: 1.0.8, Id = 443db04a-af4f-4eda-abdf-41bd052ded91; User name: 'admin'
+20201011 14:33:13.7978 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:13.9464 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Search.LuceneNET, Version: 1.1.8, Id = 62a2e5bd-b54f-4d3c-8dfd-70fbb7902285; User name: 'admin'
+20201011 14:33:15.1089 2 25 Information DllPackageFragmentInstaller  Skipping installation for file '~\bin\ICSharpCode.SharpZipLib.dll' version '0.86.0.518'. An assembly with the same version already exists.
+20201011 14:33:15.1917 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:15.2315 2 25 Information PackageManagerInstallProcess  Installing package: Composite.Lists.Profiles, Version: 1.1.0, Id = 4ddb9a49-3f1b-4f03-a54f-81a64f36f751; User name: 'admin'
+20201011 14:33:17.4230 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:17.4659 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.GetStyleOptionsFromFile, Version: 1.0.0, Id = 47cd15a3-10ee-4940-b4d0-9791381004bd; User name: 'admin'
+20201011 14:33:17.5178 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:17.5467 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.ImageAndTextTeaser, Version: 1.0.4, Id = 3ed89811-840d-42de-a118-4345eead2073; User name: 'admin'
+20201011 14:33:17.5876 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:17.6225 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.StatementTeaser, Version: 1.0.3, Id = 3fff5817-2a8f-4722-88e6-1f174ed81bff; User name: 'admin'
+20201011 14:33:17.6714 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:17.7003 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.Grid.Columns, Version: 1.0.5, Id = 38fefd63-5db7-41aa-b0cd-2bdf13452aea; User name: 'admin'
+20201011 14:33:17.7312 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:17.7741 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.TeaserCards, Version: 1.0.7, Id = 3cc59684-bd70-4ce9-a444-b9b102b018fe; User name: 'admin'
+20201011 14:33:17.9137 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:17.9397 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.LinkButton, Version: 1.0.2, Id = 4d59f41b-92fd-4a51-a164-7731556a85b8; User name: 'admin'
+20201011 14:33:17.9855 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:18.0175 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.Jumbotron, Version: 1.0.2, Id = 40c17ce5-df89-458d-93a9-d09f80b475ec; User name: 'admin'
+20201011 14:33:20.0897 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:20.1166 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Venus.Templates.Razor, Version: 2.1.0, Id = 1136ef29-1bc5-4aac-94e8-7463ea857eb8; User name: 'admin'
+20201011 14:33:20.2184 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:20.3151 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Venus.Core, Version: 2.1.0, Id = 65d06d1e-e810-49f4-98c8-4a336936f5cc; User name: 'admin'
+20201011 14:33:23.7210 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:23.8696 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.SampleImages, Version: 2.0.0, Id = e9233fb0-75c3-47f5-9b91-97d4b632826e; User name: 'admin'
+20201011 14:33:24.4890 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:24.5827 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Venus.Content, Version: 2.0.7, Id = 19e37de4-c106-45d0-a8f2-fa99503dac85; User name: 'admin'
+20201011 14:33:24.6535 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:24.7891 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.SharedPages, Version: 2.0.4, Id = 6f078485-f7c3-40b2-8960-b075ccfaaaa3; User name: 'admin'
+20201011 14:33:24.9657 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:25.0056 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Components, Version: 1.0.5, Id = 12b53b71-a829-4972-b7e8-8ecd8c99841b; User name: 'admin'
+20201011 14:33:25.1841 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:25.2429 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Search.WebsiteSearch.DefaultContent, Version: 1.0.0, Id = 8f20ae2f-ec3f-4085-b6c8-9a5935745e2b; User name: 'admin'
+20201011 14:33:25.2734 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:25.3209 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent, Version: 1.0.1, Id = 0507ebc3-f3c8-426b-9d63-2a860175e835; User name: 'admin'
+20201011 14:33:25.3455 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:25.4280 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.TeaserCards.DefaultContent, Version: 1.0.1, Id = db8c9972-d880-46ab-aebe-1bfa6c3a65d3; User name: 'admin'
+20201011 14:33:25.4804 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:25.6948 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Lists.Profiles.DefaultContent, Version: 2.0.0, Id = 6e5ca364-0d37-43b6-8549-d17a054d3e4a; User name: 'admin'
+20201011 14:33:25.8992 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:26.0109 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Community.Blog.DefaultContent, Version: 2.0.3, Id = abb7a0a1-8566-4dce-bcc6-d45894b64255; User name: 'admin'
+20201011 14:33:26.1093 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:26.1758 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.LinkButton.DefaultContent, Version: 1.0.1, Id = 86dd94cb-086d-41d9-9b8b-650db7e9e6b6; User name: 'admin'
+20201011 14:33:26.2135 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:26.2654 2 25 Information PackageManagerInstallProcess  Installing package: Orckestra.Media.ImageGallery.Slimbox2.DefaultContent, Version: 2.0.1, Id = 3237ff22-6caf-4557-8525-1d6822e3529b; User name: 'admin'
+20201011 14:33:26.3003 2 25 Information PackageManagerInstallProcess  Package successfully installed
+20201011 14:33:27.0469 2 25 Information SetupServiceFacade RGB(255, 55, 85) Done setting up the system for the first time! Enjoy!
+20201011 14:33:41.4681 3  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IFlowInformation'. Rows: 0, Updated: 0, Errors: 0
+20201011 14:33:41.6304 3  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserActivePerspective'. Rows: 6, Updated: 0, Errors: 0
+20201011 14:33:41.6672 3  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserGroupActivePerspective'. Rows: 18, Updated: 15, Errors: 0
+20201011 14:33:41.6831 3  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserGroupPermissionDefinition'. Rows: 3, Updated: 3, Errors: 0
+20201011 14:33:41.6901 3  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserPermissionDefinition'. Rows: 1, Updated: 0, Errors: 0
+20201011 14:33:41.9579 3 35 Information Orckestra.Search  Indexing document source 'Composite.Data.Types.IPage' for culture 'vi-VN'
+20201011 14:33:43.5901 3 35 Information Orckestra.Search  34 documents; Completed in 1631 ms
+20201011 14:33:43.5931 3 35 Information Orckestra.Search  Indexing document source 'Composite.Data.Types.IMediaFile' for culture 'vi-VN'
+20201011 14:33:43.7327 3 35 Information Orckestra.Search  49 documents; Completed in 139 ms
+20201011 14:33:43.7347 3 35 Information Orckestra.Search  Indexing document source 'Composite.Community.Blog.Entries' for culture 'vi-VN'
+20201011 14:33:43.9882 3 35 Information Orckestra.Search  4 documents; Completed in 253 ms
+20201011 14:33:43.9902 3 35 Information Orckestra.Search  Indexing document source 'Composite.Lists.Profiles.Profile' for culture 'vi-VN'
+20201011 14:33:44.1101 3 35 Information Orckestra.Search  6 documents; Completed in 119 ms
+20201011 21:32:48.1643 2  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IFlowInformation'. Rows: 12, Updated: 0, Errors: 0
+20201011 21:32:48.4195 2  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserActivePerspective'. Rows: 6, Updated: 0, Errors: 0
+20201011 21:32:48.4366 2  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserGroupActivePerspective'. Rows: 18, Updated: 0, Errors: 0
+20201011 21:32:48.4527 2  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserGroupPermissionDefinition'. Rows: 3, Updated: 0, Errors: 0
+20201011 21:32:48.4576 2  1 Information LegacySerializedEntityTokenUpgrader  Finished updating serialized tokens for data type 'Composite.Data.Types.IUserPermissionDefinition'. Rows: 1, Updated: 0, Errors: 0

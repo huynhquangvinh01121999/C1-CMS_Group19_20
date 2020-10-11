@@ -1,0 +1,212 @@
+﻿@inherits RazorFunction
+@using Composite.Core.WebClient.Renderings.Page
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "A multiple file upload control."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue = null)]
+    public string Name { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+    public string Label { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_FileUpload_ButtonText_Label, DefaultValue = null, Help = Localization.Constants.Fields_FileUpload_ButtonText_Help)]
+    public string ButtonText { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public string Help { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Required_Label, DefaultValue = false, Help = Localization.Constants.Fields_Parameters_Required_Help)]
+    public bool Required { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_FileUpload_MaxFileCount_Label, DefaultValue = 5, Help = Localization.Constants.Fields_FileUpload_MaxFileCount_Help)]
+    public int MaxFileCount { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_FileUpload_MaxSize_Label, DefaultValue = 50 * 1024 * 1024, Help = Localization.Constants.Fields_FileUpload_MaxSize_Help)]
+    public int MaxSize { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_FileUpload_Accept_Label, DefaultValue = null, Help = Localization.Constants.Fields_FileUpload_Accept_Help)]
+    public string Accept { get; set; }
+
+    List<HttpPostedFileBase> GetPostedFiles(string name)
+    {
+        var result = new List<HttpPostedFileBase>();
+
+        var files = Request.Files;
+
+        for (int i = 0; i < files.Count; i++)
+        {
+            if (files.Keys[i] == name)
+            {
+                var file = files[i];
+
+                if (file == null || file.FileName == "" && file.ContentLength == 0)
+                {
+                    continue;
+                }
+                if (Accept == "image/*")
+                {
+                    var ext = Path.GetExtension(file.FileName);
+                    if (ext.ToLower() != ".jpg" && ext.ToLower() != ".png" && ext.ToLower() != ".gif" && ext.ToLower() != ".jpeg" && ext.ToLower() != ".bmp")
+                    {
+                        continue;
+                    }
+                }
+
+                result.Add(files[i]);
+            }
+        }
+        return result;
+    }
+
+    string GetUserFriendlySize()
+    {
+        int maxSizeInKilobytes = MaxSize / 1024;
+        decimal maxSizeInMegabytes = ((10 * MaxSize) / (1024 * 1024)) / 10m;
+
+        return maxSizeInMegabytes > 0.1m
+            ? string.Format(Resources.FormBuilder.SizeInMegabytes, maxSizeInMegabytes)
+            : string.Format(Resources.FormBuilder.SizeInKilobytes, maxSizeInKilobytes);
+    }
+}
+
+@{
+    Name = string.IsNullOrEmpty(Name) ? Label : Name;
+    string requiredClass = Required ? "required" : "";
+    string activeButtonText = string.IsNullOrEmpty(ButtonText) ? Resources.FormBuilder.MultiFileUpload_ButtonText : ButtonText;
+
+    var formContext = FormHelper.GetFormContext();
+
+    if (formContext.IsFormSubmit)
+    {
+        var files = GetPostedFiles(Name);
+
+        if (Required && files.Count == 0)
+        {
+            formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldRequired, Label));
+        }
+
+        foreach (var file in files.Where(f => f.ContentLength > MaxSize))
+        {
+            formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FileTooBig, file.FileName, MaxSize));
+        }
+
+        if (files.Count > MaxFileCount)
+        {
+            formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_TooManyFiles, Label, MaxFileCount));
+        }
+
+        for (int i = 0; i < files.Count; i++)
+        {
+            formContext.Result.AddFile(Name + "_" + i, Label, files[i]);
+        }
+
+    }
+
+    string clientId = formContext.BuildFieldClientId(Name);
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link id="jquery-fileupload-ui-css" type="text/css" href="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
+    <link id="jquery-fileupload-css" type="text/css" href="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/css/jquery.fileupload.css" rel="stylesheet" />
+    <script type="text/javascript" id="formbuilder-maxuploadsize">
+        jQuery.extend(jQuery.validator.messages, {
+            maxuploadsizevalidator: "@HttpUtility.JavaScriptStringEncode(Resources.FormBuilder.jQuery_validator_maxuploadsize)",
+        });
+    </script>
+    <script type="text/javascript" id="formbuilder-maxfilecount">
+        jQuery.extend(jQuery.validator.messages, {
+            maxfilecountvalidator: "@HttpUtility.JavaScriptStringEncode(Resources.FormBuilder.jQuery_validator_maxfilecount)"
+        });
+    </script>
+    <script type="text/javascript" id="formbuilder-fileupload">
+        jQuery.extend(jQuery.validator.messages, {
+            fileuploadvalidator: "Fix errors below"
+        });
+    </script>
+    <script id="load-image-min-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/load-image.all.min.js"></script>
+    <script id="jquery-ui-widget-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script id="jquery-iframe-transport-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script id="jquery-fileupload-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script id="jquery-fileupload-process-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script id="jquery-fileupload-image-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
+    <script id="jquery.fileupload-ui-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/jquery.fileupload-ui.js"></script>
+    <script id="jquery-fileupload-validate-js" src="~/Frontend/Composite/Forms/FormBuilder/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script id="@(clientId + "-js")" type="text/javascript">
+        $(function () {
+            $('#@clientId').fileupload({
+                filesContainer: $('#files_@clientId'),
+                uploadTemplateId: null,
+                downloadTemplateId: null,
+                uploadTemplate: function (o) {
+                    return fileUpload_PreviewFileTemplate(o);
+                },
+                messages: {
+                    acceptFileTypes: '@Resources.FormBuilder.jQuery_validator_acceptFileType'
+                }
+                @if (Accept == "image/*" ) {
+                     <text>, acceptFileTypes: /(\.|\/)(gif|bmp|jpe?g|png)$/i </text>
+                }
+            });
+
+            $('#@clientId').bind('fileuploadprocessdone', function (e, data) {
+                $('#@clientId').parents('.form-group').removeClass("has-error").find(".text-danger").remove();
+                data.fileInput.appendTo($('#inputFileds_@clientId'));
+                $("#cancel_@clientId").fadeIn();
+            });
+            $('#@clientId').bind('fileuploadprocessfail', function (e, data) {
+                fileUpload_resetFormSimpleFileElement(data.fileInput);
+            });
+
+            $(".@clientId").on("click", ".cancel", function (e) {
+                fileUpload_cancelSelection('@clientId');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="form-group @clientId @requiredClass">
+        <label for="@clientId" class="control-label">
+            @Label @if (Required)
+            { <abbr title="@Resources.FormBuilder.WCAG_required"></abbr> }
+        </label>
+        <div class="fileupload" maxfilecount="@MaxFileCount">
+            <div class="fileupload-buttonbar">
+                <label class="btn btn-default fileinput-button" style="position:relative;">
+                    <i class="glyphicon glyphicon-plus"></i><span> @activeButtonText</span>
+                    @if (PageRenderer.RenderingReason != RenderingReason.ScreenshotGeneration)
+                    {
+                        <input id="@clientId"
+                               multiple="multiple"
+                               type="file"
+                               name="@Name"
+                               class="@( Required ? "fileupload-required" : "")"
+                               maxuploadsize="@MaxSize"
+                               maxuploadsizemessage="@GetUserFriendlySize()"
+                            @if (!string.IsNullOrEmpty(Accept))
+                            {
+                                <text> accept="@Accept" </text>
+                            }
+                               style="position: absolute; opacity: 0; -ms-filter: 'alpha(opacity=0)';"
+                               onfocus=" $(this).parent().addClass('active') "
+                               onblur=" $(this).parent().removeClass('active') " />
+                    }
+                </label>
+                <a id="cancel_@clientId" class="cancel btn btn-danger" style="display: none;  padding: 10px 15px; margin-left: 15px;"><i class=" glyphicon glyphicon-trash"></i></a>
+                @if (!string.IsNullOrWhiteSpace(Help))
+                {
+                    <p class="help-block">@Help</p>
+                }
+            </div>
+            <div class="fileupload-content">
+                <table id="files_@clientId" class="table table-striped files"></table>
+            </div>
+            <div id="inputFileds_@clientId" class="inputFiles" style="display:none"></div>
+        </div>
+    </div>
+</body>
+</html>

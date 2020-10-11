@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Composite.Tools.LinkChecker" groupName="Composite.Tools" version="1.0.1" author="Composite A/S" website="http://www.composite.net" description="A tool for checking broken links in C1 page contentA tool for checking broken links in C1 page content" installDate="2020-10-11T14:33:13.2452845+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="true" reloadConsoleOnCompletion="true" systemLocking="hard" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

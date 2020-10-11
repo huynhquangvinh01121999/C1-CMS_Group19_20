@@ -1,0 +1,313 @@
+﻿@using System.Linq
+@using Composite.Community.Blog
+@using Composite.Core.Routing.Pages
+@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+@functions {
+    public override string FunctionDescription
+    {
+        get { return @"Displays a list of the latest blog entries, blog comments and the form to post comments on a page."; }
+    }
+
+    [FunctionParameter(Label = "Blog Entries Count", Help = @"The number of blog entries to display (5 by default).", DefaultValue = 5)]
+    public int BlogEntriesCount { get; set; }
+
+    [FunctionParameter(Label = "List options", Help = "Additional data to show when displaying blog posts in a list, such as the image, teaser, content, author, date, tags, share icons, RSS link. By default  all data is displayed  except for the image, content, RSS link.", DefaultValue = "Show date,Show author,Show teaser,Show image,Show tags", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show DISQUS Comment Count,Show image,Show teaser,Show content,Show author,Show date,Show tags,Show share icons,Show RSS"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+    public string BlogListOptions { get; set; }
+
+    [FunctionParameter(Label = "Item options", Help = @"Additional data to show when displaying an individual  blog post, such as the image, teaser, content, author, date, tags, share icons. By default  the author, date and content are only  displayed.", DefaultValue = "Show content,Show tags,Show date,Show author,Show title,Show share icons", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"" label="""" bindingsourcename=""""><f:helpdefinition xmlns:f=""http://www.composite.net/ns/function/1.0"" helptext="""" /><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show title,Show image,Show teaser,Show content,Show author,Show date,Show tags,Show share icons"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+    public string BlogItemOptions { get; set; }
+
+    [FunctionParameter(Label = "Comments Service Key", Help = "The unique value identifying your website with a comment service you have registered with. By default this is SiteShortName for DISQUS, register at http://disqus.com/.", DefaultValue = "")]
+    public string CommentsServiceKey { get; set; }
+
+    [FunctionParameter(Label = "Show posts from all blogs", Help = "If 'true', posts from all blogs available on this website will be shown; otherwise, only from the current blog. 'false' by default", DefaultValue = false)]
+    public bool IsGlobal { get; set; }
+
+
+    private bool IsBlogItem = BlogFacade.IsBlogList();
+    private Entries CurrentBlogItem = null;
+}
+@{
+    int pageSize = BlogEntriesCount;
+    int pageCurrent;
+    if (!int.TryParse(Request.QueryString["p"], out pageCurrent))
+    {
+        pageCurrent = 1;
+    }
+
+    var entries = BlogFacade.GetEntries(IsGlobal);
+    if (entries == null)
+    {
+        return;
+    }
+
+    int entriesCount = entries.Count();
+
+    var pageCount = (entriesCount + pageSize - 1) / pageSize;
+    entries = entries.Skip(pageSize * (pageCurrent - 1)).Take(pageSize);
+
+    var pageId = PageRenderer.CurrentPageId;
+    var authors = BlogFacade.GetAuthors();
+    if (IsBlogItem)
+    {
+        CurrentBlogItem = entries.FirstOrDefault();
+        if (CurrentBlogItem == null)
+        {
+            return;
+        }
+    }
+
+    C1PageRoute.RegisterPathInfoUsage();
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    @if (IsBlogItem)
+    {
+        <title>
+            @CurrentBlogItem.Title
+        </title>
+        <meta name="description" content="@CurrentBlogItem.Teaser" />
+    }
+    <link rel="alternate" type="application/rss+xml" title="@CurrentPageNode.Title" href="/BlogRssFeed.ashx?bid=@CurrentPageNode.Id" />
+    <link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+</head>
+<body>
+    <div class="blog">
+        @if (IsBlogItem)
+        {
+            var author = authors.First(a => a.Id == CurrentBlogItem.Author);
+            @BlogItem(CurrentBlogItem, author, BlogItemOptions, CommentsServiceKey);
+        }
+        else
+        {
+            int i = 1;
+            foreach (var entry in entries)
+            {
+                var author = authors.First(a => a.Id == entry.Author);
+                @BlogItem(entry, author, BlogListOptions, CommentsServiceKey)
+                if (entriesCount != i)
+                {
+                    <hr />
+                }
+                i++;
+            }
+
+            if (pageCount > 1)
+            {
+
+                <ul class="pagination">
+                    @Paging(pageCount, pageCurrent)
+                </ul>
+
+            }
+            if (BlogListOptions.Contains("Show RSS"))
+            {
+                <div class="blog-rss">
+                    <a class="btn btn-info" title="Blog Feed" href="~/BlogRssFeed.ashx?bid=@pageId&amp;IsGlobal=@IsGlobal.ToString()&amp;cultureName=@BlogFacade.GetCurrentCultureName()">Blog RSS</a>
+                </div>
+            }
+            if (BlogListOptions.Contains("Show DISQUS Comment Count"))
+            {
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = '@CommentsServiceKey'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function () {
+                        var s = document.createElement('script'); s.async = true;
+                        s.type = 'text/javascript';
+                        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+                        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                    }());
+                </script>
+            }
+            BlogFacade.SetNoCache();
+        }
+    </div>
+</body>
+</html>
+
+@helper BlogItem(Entries entry, Authors author, string blogItemOptions, string commentsServiceKey)
+{
+var tags = BlogFacade.GetBlogTags(entry.Tags);
+var displayComments = entry.DisplayComments;
+var blogUrl = BlogFacade.GetBlogUrl(entry);
+
+
+    <div class="blog-item">
+        @if (IsBlogItem)
+        {
+            if (blogItemOptions.Contains("Show title"))
+            {
+                <h1 class="blog-title">@entry.Title</h1>
+            }
+        }
+        else
+        {
+            <h2 class="blog-title">
+                <a href="@blogUrl" title="@entry.Title">@entry.Title</a>
+                @if (displayComments && blogItemOptions.Contains("Show DISQUS Comment Count"))
+                {
+                    <span class="blog-comments-count">
+                        <a href="@(blogUrl)#disqus_thread">0</a>
+                    </span>
+                }
+            </h2>
+        }
+
+
+        <div class="blog-item-body">
+            <div class="blog-info clearfix">
+                @if (blogItemOptions.Contains("Show date"))
+                {
+                    <div class="blog-date pull-left">
+                        @Date(entry.Date)
+                    </div>
+                }
+                @if (blogItemOptions.Contains("Show author"))
+                {
+                    <div class="blog-author pull-left">
+                        @Author(author)
+                    </div>
+                }
+
+            </div>
+            @if (!string.IsNullOrEmpty(entry.Image) && blogItemOptions.Contains("Show image"))
+            {
+
+                <img class="blog-img img-thumbnail" src="~/media(@entry.Image)" alt="@entry.Title" />
+
+            }
+            @if (blogItemOptions.Contains("Show teaser"))
+            {
+                <p class="@(IsBlogItem ? "lead" : string.Empty)">@entry.Teaser</p>
+            }
+            @if (blogItemOptions.Contains("Show content"))
+            {
+                <div class="blog-content">
+                    @Html.Raw(entry.Content)
+                </div>
+            }
+            @if (tags.Any() && blogItemOptions.Contains("Show tags"))
+            {
+                <div class="blog-tags">
+                    @TagsList(tags)
+                </div>
+
+            }
+            @if (blogItemOptions.Contains("Show share icons"))
+            {
+                <div class="blog-addthis">
+                    @AddThis(blogUrl, entry.Title)
+                </div>
+            }
+        </div>
+    </div>
+
+if (IsBlogItem)
+{
+    if (entry.DisplayComments)
+    {
+            <hr />
+            @Function("Composite.Community.Blog.Comments", new { CommentsServiceKey = commentsServiceKey })
+    }
+}
+}
+
+@helper Paging(int pageCount, int pageCurrent)
+{
+var groupsize = 10;
+if (pageCurrent > groupsize)
+{
+        <li><a href="@BlogFacade.GetCurrentPageUrl()?p=1">&lt;&lt;</a></li>
+}
+if (pageCurrent > 1)
+{
+        <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@(pageCurrent - 1)">&lt;</a></li>
+}
+var grouppage = (pageCurrent - 1) / groupsize;
+for (int page = grouppage * groupsize + 1; page <= pageCount + 1 && page <= (grouppage + 1) * groupsize; page++)
+{
+    if (page < pageCount + 1)
+    {
+        if (page == pageCurrent)
+        {
+                <li class="active">
+                    <span>
+                        @page
+                    </span>
+                </li>
+        }
+        else
+        {
+                <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@page">@page</a></li>
+        }
+    }
+}
+if (pageCurrent + 1 <= pageCount)
+{
+        <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@(pageCurrent + 1)">&gt;</a></li>
+}
+if (grouppage < (pageCount - 1) / groupsize)
+{
+        <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@pageCount">&gt;&gt;</a></li>
+}
+}
+
+@helper Author(Authors author)
+{
+
+if (!string.IsNullOrEmpty(author.Picture))
+{
+        <img class="blog-author-picture" src="~/Renderers/ShowMedia.ashx?i=@author.Picture" alt="@author.Name" />
+}
+else
+{
+        <span class="text-muted glyphicon glyphicon-user"></span>
+}
+
+if (!string.IsNullOrEmpty(author.Email) && author.DisplayEmail)
+{
+        <a href="mailto:@author.Email">@author.Name</a>
+}
+else
+{
+        @author.Name
+}
+
+}
+
+@helper AddThis(string fullBlogUrl, string title)
+{
+         <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style @(IsBlogItem ? "addthis_32x32_style" : "")" addthis:url="@fullBlogUrl" addthis:title="@title" xmlns:addthis="http://www.addthis.com">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_compact"></a>
+
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pub=AddThis"></script>
+        <!-- AddThis Button END -->
+
+}
+
+@helper Date(DateTime date)
+{
+    <span class="text-muted">
+        <span class="glyphicon glyphicon-calendar"></span>
+        @BlogFacade.CustomDateFormat(date, "dd MMMM yyyy")
+    </span>
+}
+
+@helper TagsList(List<string> tags)
+{
+    <small class="text-muted">
+        <span class="glyphicon glyphicon-tags"></span>
+        @foreach (var tag in tags)
+        {
+            <span>&#160;&#160;</span><a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a>
+        }
+    </small>
+}

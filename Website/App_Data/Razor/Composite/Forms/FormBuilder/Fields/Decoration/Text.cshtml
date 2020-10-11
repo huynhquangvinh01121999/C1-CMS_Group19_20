@@ -1,0 +1,34 @@
+﻿@inherits RazorFunction
+
+@using Composite.Forms.FormBuilder;
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A text paragraph."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Text_Text_Label, Help = Localization.Constants.Fields_Text_Text_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea", DefaultValue = "")]
+    public string Text { get; set; }
+}
+
+@{
+	bool useDummyText = String.IsNullOrWhiteSpace(Text) && FormHelper.GetFormContext().IsPreview;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+        <p>
+            @if (useDummyText)
+            {
+                @Localization.Fields_Text_Preview
+            } 
+            else 
+            {
+                @Html.Raw(string.Join("<br />", Text.Split(new [] {'\n'}).Select(HttpUtility.HtmlEncode)))
+            }
+        </p>
+    </body>
+</html>

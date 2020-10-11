@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IPageStructure,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3768a65c-2a99-4d32-aa72-ea70972fd2dd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="d74e62c7-5bc6-4927-9e45-6df0b628a31c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7d22a9d5-449a-45d8-b882-d5cb465d7584" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6e2301ce-0172-439d-b557-ce268b9854ed" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3feb4922-8bc7-49ba-bc77-48a871028304" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="1bf19f5e-ee74-40f9-8cb8-a9d8222f94cd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7282d28c-d3c7-4221-9b78-2331ae8d9c6e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="e8be7c4b-870f-4dfb-91b5-7c4b7bec408f" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="ca2b9cf8-9461-439a-92f3-70a74eea92fd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="51a6c119-d529-42f7-8041-3dee62649a5e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="826bb71e-c54b-468b-9676-2ea1cb19da75" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a231fba9-09c6-451b-9fac-cbdd3986e40e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="4d55cf40-ecf0-44b7-85c5-01a3294ca3fb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="50156042-3837-4511-9ced-8ed6116e099d" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f5386aa3-d6e7-4f51-b0aa-73db531ad70b" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b4efe486-5c4a-4ae7-9f36-0bf31fe40cdc" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="5a97be34-fb7f-4bd1-8ff3-4ab4d9a87d6e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="e3d6775a-2383-4464-816b-d273d9c589c5" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="885a6bcd-7f2d-4a15-8abb-617d80d3b67d" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="dfb6e1ac-ea0d-4c50-b8b7-bb6046fd3a11" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3768a65c-2a99-4d32-aa72-ea70972fd2dd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="d74e62c7-5bc6-4927-9e45-6df0b628a31c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7d22a9d5-449a-45d8-b882-d5cb465d7584" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6e2301ce-0172-439d-b557-ce268b9854ed" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3feb4922-8bc7-49ba-bc77-48a871028304" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="1bf19f5e-ee74-40f9-8cb8-a9d8222f94cd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7282d28c-d3c7-4221-9b78-2331ae8d9c6e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="e8be7c4b-870f-4dfb-91b5-7c4b7bec408f" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="ca2b9cf8-9461-439a-92f3-70a74eea92fd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="51a6c119-d529-42f7-8041-3dee62649a5e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="826bb71e-c54b-468b-9676-2ea1cb19da75" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a231fba9-09c6-451b-9fac-cbdd3986e40e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="4d55cf40-ecf0-44b7-85c5-01a3294ca3fb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="50156042-3837-4511-9ced-8ed6116e099d" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f5386aa3-d6e7-4f51-b0aa-73db531ad70b" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b4efe486-5c4a-4ae7-9f36-0bf31fe40cdc" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="5a97be34-fb7f-4bd1-8ff3-4ab4d9a87d6e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="e3d6775a-2383-4464-816b-d273d9c589c5" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="885a6bcd-7f2d-4a15-8abb-617d80d3b67d" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="dfb6e1ac-ea0d-4c50-b8b7-bb6046fd3a11" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3768a65c-2a99-4d32-aa72-ea70972fd2dd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="d74e62c7-5bc6-4927-9e45-6df0b628a31c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7d22a9d5-449a-45d8-b882-d5cb465d7584" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="6e2301ce-0172-439d-b557-ce268b9854ed" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3feb4922-8bc7-49ba-bc77-48a871028304" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="1bf19f5e-ee74-40f9-8cb8-a9d8222f94cd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="7282d28c-d3c7-4221-9b78-2331ae8d9c6e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="e8be7c4b-870f-4dfb-91b5-7c4b7bec408f" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="ca2b9cf8-9461-439a-92f3-70a74eea92fd" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="51a6c119-d529-42f7-8041-3dee62649a5e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="826bb71e-c54b-468b-9676-2ea1cb19da75" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a231fba9-09c6-451b-9fac-cbdd3986e40e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="4d55cf40-ecf0-44b7-85c5-01a3294ca3fb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="50156042-3837-4511-9ced-8ed6116e099d" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f5386aa3-d6e7-4f51-b0aa-73db531ad70b" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b4efe486-5c4a-4ae7-9f36-0bf31fe40cdc" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="5a97be34-fb7f-4bd1-8ff3-4ab4d9a87d6e" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="e3d6775a-2383-4464-816b-d273d9c589c5" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="885a6bcd-7f2d-4a15-8abb-617d80d3b67d" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="dfb6e1ac-ea0d-4c50-b8b7-bb6046fd3a11" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3768a65c-2a99-4d32-aa72-ea70972fd2dd" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="d74e62c7-5bc6-4927-9e45-6df0b628a31c" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="7d22a9d5-449a-45d8-b882-d5cb465d7584" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="6e2301ce-0172-439d-b557-ce268b9854ed" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3feb4922-8bc7-49ba-bc77-48a871028304" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="1bf19f5e-ee74-40f9-8cb8-a9d8222f94cd" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="7282d28c-d3c7-4221-9b78-2331ae8d9c6e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="e8be7c4b-870f-4dfb-91b5-7c4b7bec408f" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="ca2b9cf8-9461-439a-92f3-70a74eea92fd" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="51a6c119-d529-42f7-8041-3dee62649a5e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="826bb71e-c54b-468b-9676-2ea1cb19da75" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="a231fba9-09c6-451b-9fac-cbdd3986e40e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="4d55cf40-ecf0-44b7-85c5-01a3294ca3fb" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="50156042-3837-4511-9ced-8ed6116e099d" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="f5386aa3-d6e7-4f51-b0aa-73db531ad70b" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="b4efe486-5c4a-4ae7-9f36-0bf31fe40cdc" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="5a97be34-fb7f-4bd1-8ff3-4ab4d9a87d6e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="e3d6775a-2383-4464-816b-d273d9c589c5" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="885a6bcd-7f2d-4a15-8abb-617d80d3b67d" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="dfb6e1ac-ea0d-4c50-b8b7-bb6046fd3a11" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="9bdb7b6d-4e4f-41c9-bcc3-95b20bd8d796" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3768a65c-2a99-4d32-aa72-ea70972fd2dd" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="d74e62c7-5bc6-4927-9e45-6df0b628a31c" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="7d22a9d5-449a-45d8-b882-d5cb465d7584" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="6e2301ce-0172-439d-b557-ce268b9854ed" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3feb4922-8bc7-49ba-bc77-48a871028304" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="1bf19f5e-ee74-40f9-8cb8-a9d8222f94cd" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="7282d28c-d3c7-4221-9b78-2331ae8d9c6e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="e8be7c4b-870f-4dfb-91b5-7c4b7bec408f" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="ca2b9cf8-9461-439a-92f3-70a74eea92fd" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="51a6c119-d529-42f7-8041-3dee62649a5e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="826bb71e-c54b-468b-9676-2ea1cb19da75" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="a231fba9-09c6-451b-9fac-cbdd3986e40e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="4d55cf40-ecf0-44b7-85c5-01a3294ca3fb" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="50156042-3837-4511-9ced-8ed6116e099d" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="f5386aa3-d6e7-4f51-b0aa-73db531ad70b" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="b4efe486-5c4a-4ae7-9f36-0bf31fe40cdc" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="5a97be34-fb7f-4bd1-8ff3-4ab4d9a87d6e" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="e3d6775a-2383-4464-816b-d273d9c589c5" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="885a6bcd-7f2d-4a15-8abb-617d80d3b67d" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="1744a4e2-849b-4f8e-a612-702192e3dc69" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="dfb6e1ac-ea0d-4c50-b8b7-bb6046fd3a11" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="3a613405-9990-47a6-8f00-672a8e6de9e7" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

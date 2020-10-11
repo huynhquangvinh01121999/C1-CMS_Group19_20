@@ -1,0 +1,120 @@
+﻿@inherits RazorFunction
+
+@using System.Text.RegularExpressions
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "An e-mail field."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue=null)]
+    public string Name { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+    public string Label { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_PlaceholderText_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_PlaceholderText_Help)]
+	public string PlaceholderText { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public string Help { get; set; }    
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Required_Label, DefaultValue = false, Help = Localization.Constants.Fields_Parameters_Required_Help)]
+    public bool Required { get; set; }
+    
+    private const int MaxLength = 200;
+    
+    private static readonly string EmailAddressRegex =
+            @"^([a-zA-Z0-9_\-\+\.]+)@((\[[0-9]{1,3}" +
+            @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+            @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+
+    private static readonly Regex _emailValidationRegex = new Regex(EmailAddressRegex);
+
+    public bool IsEmailValid(string email)
+    {
+        return !string.IsNullOrWhiteSpace(email) && _emailValidationRegex.IsMatch(email.Trim());
+    }
+}
+
+@{
+    Name = string.IsNullOrEmpty(Name) ? Label : Name;
+	string requiredClass = Required ? "required" : "";
+
+    var formContext = FormHelper.GetFormContext();
+    string clientId = formContext.BuildFieldClientId(Name);
+    
+    string value;
+
+    if (!formContext.IsFormSubmit)
+    {
+        value = "";
+    }
+    else
+    {
+        value = Request[clientId].Trim();
+
+        formContext.Result.Add(Name, Label, typeof (string), value);
+
+        // Validation
+
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            if (Required)
+            {
+				formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldRequired, Label));
+            }
+        }
+        else
+        {
+            if (value.Length > MaxLength)
+            {
+				formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldTooLong, Label, MaxLength));
+            }
+
+            if (!IsEmailValid(value))
+            {
+				formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_InvalidEmailFormat, Label));
+            }
+        }
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+        @if (!formContext.IsPreview)
+        {
+           <script type="text/javascript" id="formbuilder-email">
+           	$(function () {
+           		jQuery.extend(jQuery.validator.messages, {
+           			email: "@HttpUtility.JavaScriptStringEncode(Resources.FormBuilder.jQuery_validator_email)",
+                    });
+                  });
+            </script>
+            }
+    </head>
+    <body>
+        <div class="form-group @clientId @requiredClass">
+            <label for="@clientId" class="control-label">
+                @Label @if (Required) { <abbr title="@Resources.FormBuilder.WCAG_required"></abbr> }
+            </label>
+
+            <input type="email" 
+                   class="form-control no-submit email @(Required ? "required" : "")" 
+                   required="@(Required ? "required" : null)"
+                   id="@clientId" 
+                   name="@clientId" 
+                   value="@value"
+                   placeholder="@PlaceholderText"
+                   maxlength="@MaxLength" />
+        
+            @if(!string.IsNullOrWhiteSpace(Help)) 
+			{
+				<p class="help-block">@Help</p>
+			}
+        </div>
+    </body>
+</html>
+

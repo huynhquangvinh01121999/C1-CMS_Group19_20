@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~/Bin/Orckestra.Search.WebsiteSearch.dll" />
+        <File filename="~/App_Data/Razor/Orckestra/Search/WebsiteSearch/SearchForm.cshtml" />
+        <File filename="~/App_Data/Razor/Orckestra/Search/WebsiteSearch/SearchResults.cshtml" />
+        <File filename="~/App_Data/Razor/Orckestra/Search/WebsiteSearch/NavbarSearchForm.cshtml" />
+        <File filename="~/App_GlobalResources/Orckestra/Search/WebsiteSearch.resx" />
+        <File filename="~/Composite/InstalledPackages/localization/Orckestra.Search.WebsiteSearch.en-US.xml" />
+        <File filename="~/App_Data/Components/Orckestra/Search/WebsiteSearch/SearchForm.xml" />
+        <File filename="~/App_Data/Components/Orckestra/Search/WebsiteSearch/SearchResults.xml" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

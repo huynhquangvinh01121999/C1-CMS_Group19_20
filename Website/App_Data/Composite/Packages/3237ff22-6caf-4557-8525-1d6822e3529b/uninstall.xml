@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IPageStructure,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="251d6dbd-be50-459e-839c-879b79d362d8" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

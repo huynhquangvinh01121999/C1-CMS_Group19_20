@@ -1,0 +1,51 @@
+﻿@using Composite.Community.Blog
+@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Display links to older blog entries grouped by month/year."; }
+    }
+
+    [FunctionParameter(Label = "Blog page", Help = "The page with the blog added.", DefaultValue = null)]
+    public DataReference<IPage> BlogPage { get; set; }
+
+    [FunctionParameter(Label = "Show posts from all blogs", Help = "If 'true', posts from all blogs available on this website will be shown; otherwise, only from the current blog. 'false' by default", DefaultValue = false)]
+    public bool IsGlobal { get; set; }
+}
+@{
+    Guid landingPageId = BlogPage != null ? BlogPage.Data.Id : PageRenderer.CurrentPageId;
+    var entries = BlogFacade.GetArchive(BlogPage, IsGlobal);
+
+    var pathInfo = Composite.Core.Routing.Pages.C1PageRoute.GetPathInfo();
+    int year = 0, month = 0;
+    if (pathInfo != null)
+    {
+        var parts = pathInfo.Split('/');
+        if (parts.Length == 3)
+        {
+            int.TryParse(parts[1], out year);
+            int.TryParse(parts[2], out month);
+        }
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+</head>
+<body>
+    @if (entries.Any())
+    {
+        <div class="blog-archive list-group">
+            @foreach (var entry in entries)
+            {
+                <a class="list-group-item @(entry.Date.Year == year && entry.Date.Month == month ? "active" : string.Empty)" title="@entry.Date.ToString("MMMM yyyy")" href="~/page({@landingPageId})/@BlogFacade.CustomDateFormatCulture(entry.Date, "yyyy/MM", "en-US")">
+                    @entry.Date.ToString("MMMM yyyy") <span class="badge">@entry.Count</span>
+                </a>
+
+            }
+        </div>
+    }
+</body>
+</html>

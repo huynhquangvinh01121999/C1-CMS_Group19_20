@@ -1,0 +1,3 @@
+System.Xml.Linq.XElement, System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+False
+Used internally by the Composite.Community.Blog.List function to handle comments in a blog.

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data/Razor/Orckestra/Media/ImageGallery/Slimbox2.cshtml" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\components/gallery.png" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\components/image.png" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css/closelabel.gif" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css/loading.gif" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css/nextlabel.gif" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css/prevlabel.gif" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css/slimbox2-rtl.css" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css/slimbox2.css" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\example.html" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\example.jpg" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra/autoactivation.js" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra/fix-urls.js" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra/flickr.js" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra/picasaweb.js" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\js/slimbox2.js" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\README.txt" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\src/autoload.js" />
+        <File filename="~\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\src/slimbox2.js" />
+        <File filename="~\App_Data\Components\Orckestra\Media\ImageGallery\Slimbox2\Slimbox2Gallery.xml" />
+        <File filename="~\App_Data\Components\Orckestra\Media\ImageGallery\Slimbox2\Slimbox2Image.xml" />
+        <File filename="~\App_Data\Razor\Orckestra\Media\ImageGallery\Slimbox2\Gallery.cshtml" />
+        <File filename="~\App_Data\Razor\Orckestra\Media\ImageGallery\Slimbox2\Image.cshtml" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

@@ -1,0 +1,28 @@
+﻿@inherits RazorFunction
+
+@using Composite.Forms.FormBuilder;
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A heading and sub text."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Heading_Heading_Label, Help = Localization.Constants.Fields_Heading_Heading_Help, DefaultValue = "")]
+    public string Heading { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Heading_SubText_Label, Help = Localization.Constants.Fields_Heading_SubText_Help, 
+                       WidgetFunctionName = "Composite.Widgets.String.TextArea", DefaultValue="")]
+    public string SubText { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+        <h3>@(string.IsNullOrEmpty(Heading) && FormHelper.GetFormContext().IsPreview ? Localization.Fields_Heading_Preview : Heading)</h3>
+		@if (!string.IsNullOrWhiteSpace(SubText))
+		{
+			<p>@SubText.Replace(Environment.NewLine, "<br />")</p>
+		}
+    </body>
+</html>

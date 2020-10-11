@@ -1,0 +1,69 @@
+﻿@inherits RazorFunction
+@using Composite.Core.WebClient.Captcha
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "CAPTCHA"; }
+    }
+}
+
+@{
+    var formContext = FormHelper.GetFormContext();  
+    
+    string encryptedValue;
+
+    if (!formContext.IsFormSubmit)
+    {
+        encryptedValue = Captcha.CreateEncryptedValue();
+    }
+    else
+    {
+        string postedEncryptedValue = Request["captcha"];
+        encryptedValue = Captcha.IsValid(postedEncryptedValue) ? postedEncryptedValue : Captcha.CreateEncryptedValue();
+
+        string postedValue = Request["txt_captcha"];
+
+        if (!Captcha.IsValid(postedValue, encryptedValue))
+        {
+            formContext.Errors.Raise(Resources.FormBuilder.CAPTCHA_ValidationFailed);
+        }
+        else
+        {
+            if (!formContext.ValidationFailed)
+            {
+                Captcha.RegisterUsage(encryptedValue);
+            }
+        }
+    }
+
+    string clientId = formContext.FormClientId + "_captcha";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+        <div class="form-group @clientId required">
+
+            <input type="hidden" name="captcha" value="@encryptedValue"/>
+
+            <label for="@clientId" class="control-label">
+                @Resources.FormBuilder.CAPTCHA_Label <abbr title="@Resources.FormBuilder.WCAG_required"></abbr>
+            </label>
+        
+            <div>
+                <img src="@Captcha.GetImageUrl(encryptedValue)" />
+            </div>
+
+            <input type="text" 
+                   class="form-control required" 
+                   id="@clientId" 
+                   name="txt_captcha" 
+                   value=""
+                   maxlength="20" />
+        </div>
+    </body>
+</html>
+

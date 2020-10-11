@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+
+  <string key="ElementProvider.Root.Label" value="Formulaires de saisie" />
+  <string key="ElementProvider.Root.ToolTip" value="Parcourir les donn&#233;es soumises ici." />
+  <string key="ElementProvider.Browse.Label" value="Parcourir" />
+  <string key="ElementProvider.Browse.ToolTip" value="Parcourir les donn&#233;es de formulaire soumises." />
+  <string key="ElementProvider.DownloadAction.Label" value="T&#233;l&#233;charger en format XML" />
+  <string key="ElementProvider.DownloadAction.ToolTip" value="T&#233;l&#233;chargements les donn&#233;es soumises en format XML" />
+  <string key="ElementProvider.ExportToExcel.Label" value="Exporter vers Excel" />
+  <string key="ElementProvider.ExportToExcel.ToolTip" value="T&#233;l&#233;charger les donn&#233;es soumises en format Excel." />
+  <string key="ElementProvider.Delete.Label" value="Effacer" />
+  <string key="ElementProvider.Delete.ToolTip" value="Efface d&#233;finitivement toutes les donn&#233;es associ&#233;es &#224; ce formulaire." />
+
+  <string key="Editor.Title" value="Designer de formulaires" />
+  <string key="Editor.Tabs.Settings" value="Param&#232;tres" />
+  <string key="Editor.Tabs.Designer" value="Cr&#233;ateur" />
+  <string key="Editor.Tabs.Actions" value="Actions de soumission" />
+  <string key="Editor.Tabs.Receipt" value="R&#233;ception" />
+  <string key="Editor.Settings.Name.Label" value="Nom" />
+  <string key="Editor.Settings.Name.Help" value="Le nom du formulaire. Lorsque les donn&#233;es sont sauvegard&#233;es, ce nom est utilis&#233; pour identifier le formulaire." />
+  <string key="Editor.Settings.SubmitButtonLabel.Label" value="Libell&#233; du bouton &#39;Soumettre&#39;" />
+  <string key="Editor.Settings.SubmitButtonLabel.Help" value="L&#39;&#233;tiquette du bouton qui envoie le formulaire. Ci-dessous les champs de formulaire." />
+  <string key="Editor.Settings.Security.Label" value="S&#233;curit&#233;" />
+  <string key="Editor.Settings.Security.Help" value="Si les r&#232;gles de s&#233;curit&#233; sp&#233;ciales ont &#233;t&#233; cr&#233;&#233;es pour votre site Web, s&#233;lectionnez celles &#224; utiliser. Cela pourrait avoir des r&#232;gles comme &#171;utiliser HTTPS cryptage&#187; ou &#171;ne montrer formulaire &#224; l&#39;extranet utilisateurs. S&#233;lectionnez &#39;Default&#39; si ce n&#39;est pas une pr&#233;occupation." />
+  <string key="Editor.Settings.CAPTCHA.Label1" value="Protection anti-spam" />
+  <string key="Editor.Settings.CAPTCHA.Label2" value="Utiliser CAPTCHA" />
+  <string key="Editor.Settings.CAPTCHA.Help" value="Lorsque  coch&#233;e, le formulaire contient un champ de CAPTCHA. Cela permettra de limiter le spam sur votre site web." />
+  <string key="Editor.Fields.AddComponent" value="Ajouter un composant" />
+  <string key="Editor.Fields.DropComponentsHere" value="D&#233;poser des composants ici" />
+  <string key="Editor.Fields.PreviewError" value="Erreur pr&#233;visualisation de l&#39;&#233;l&#233;ment." />
+  <string key="Editor.Fields.DescriptionFieldGroup.Label" value="Description" />
+  <string key="Editor.Fields.ValidationFieldGroup.Label" value="Validation" />
+  <string key="Editor.Fields.AdvancedFieldGroup.Label" value="Avanc&#233;" />
+  <string key="Editor.Receipt.DefaultText" value="Merci! Nous avons re&#231;u vos informations." />
+
+  <string key="Editor.SaveError.AlertTitle" value="Erreur d&#39;enregistrement du formulaire." />
+  <string key="Editor.SaveError.NoActionSelected" value="Au moins une action doit &#234;tre s&#233;lectionn&#233;e." />
+  <string key="ActionEditor.EnableLabel" value="Action" />
+  <string key="FieldGroup.Standard" value="Biblioth&#232;que de composants" />
+  <string key="FieldGroup.TextAndDecorations" value="Texte &amp; d&#233;corations" />
+
+  <string key="Fields.TextBox" value="Zone de texte" />
+  <string key="Fields.TextArea" value="Zone de m&#233;mo" />
+  <string key="Fields.CheckBox" value="Case &#224; cocher" />
+  <string key="Fields.CheckBoxList" value="Liste de cases &#224; cocher" />
+  <string key="Fields.DropDown" value="Liste d&#233;roulante" />
+  <string key="Fields.MultiSelector" value="S&#233;lections multiples" />
+  <string key="Fields.RadioButtons" value="Boutons radio" />
+  <string key="Fields.Date" value="Date" />
+  <string key="Fields.Email" value="Courriel" />
+  <string key="Fields.FileUpload" value="T&#233;l&#233;versement de fichier" />
+  <string key="Fields.MultiFileUpload" value="T&#233;l&#233;versement multiple" />
+  <string key="Fields.ImageUpload" value="T&#233;l&#233;versement d&#39;image" />
+  <string key="Fields.MultipleImageUpload" value="T&#233;l&#233;versement multiple d&#39;images" />
+
+  <string key="Fields.Decoration.Heading" value="Ent&#234;te" />
+  <string key="Fields.Decoration.Text" value="Texte" />
+  <string key="Fields.Decoration.Separator" value="S&#233;parateur" />
+  <string key="Fields.Decoration.Image" value="Image" />
+  <string key="Fields.Decoration.RichText" value="Texte riche (HTML)" />
+
+  <string key="Fields.Parameters.Name.Label" value="Nom du champ" />
+  <string key="Fields.Parameters.Name.Help" value="Le nom du champ est utilis&#233; pour identifier le champ lors du stockage des donn&#233;es. Si vous avez besoin de structurer les donn&#233;es, vous pouvez sp&#233;cifier un nom sp&#233;cifique ici. Laissez ce champ vide pour r&#233;utiliser la valeur sp&#233;cifi&#233;e dans le libell&#233;." />
+  <string key="Fields.Parameters.Label.Label" value="Libell&#233;" />
+  <string key="Fields.Parameters.Label.Help" value="Le libell&#233; du champ, G&#233;n&#233;ralement affich&#233; au ci-dessus." />
+  <string key="Fields.Parameters.Help.Label" value="Texte d&#39;aide" />
+  <string key="Fields.Parameters.Help.Help" value="Un texte plus long aide l&#39;utilisateur &#224; comprendre comment remplir le champ." />
+  <string key="Fields.Parameters.PlaceholderText.Label" value="Texte d&#39;astuce" />
+  <string key="Fields.Parameters.PlaceholderText.Help" value="Une astuce courte qui d&#233;crit la valeur attendue d&#39;un champ d&#39;entr&#233;e (par exemple, une valeur d&#39;&#233;chantillon ou &#224; une courte description du format attendu). Le texte d&#39;indication est affich&#233;e dans la zone d&#39;entr&#233;e avant que l&#39;utilisateur entre une valeur. Aussi connu comme un texte d&#39;espace r&#233;serv&#233;." />
+  <string key="Fields.Parameters.Required.Label" value="Est obligatoire" />
+  <string key="Fields.Parameters.Required.Help" value="Lorsque coch&#233;e, le champ de formulaire devient obligatoire - il doit contenir une valeur avant que le formulaire peut puisse &#234;tre soumis." />
+  <string key="Fields.Parameters.DefaultValue.Label" value="Valeur par d&#233;faut" />
+  <string key="Fields.Parameters.DefaultValue.Help" value="La valeur devant &#234;tre affich&#233;e dans le champ." />
+  <string key="Fields.TextBox.MaxLength.Label" value="Longueur max" />
+  <string key="Fields.TextBox.MaxLength.Help" value="La longueur maximale autoris&#233;e (nombre de caract&#232;res que l&#39;utilisateur peut &#233;crire). Lorsque d&#233;pass&#233;e, un avertissement sera affich&#233;." />
+  <string key="Fields.TextArea.Rows.Label" value="Lignes" />
+  <string key="Fields.TextArea.Rows.Help" value="La quantit&#233; de lignes visibles dans la zone de texte." />
+  <string key="Fields.Selectors.Options.Label" value="Options" />
+  <string key="Fields.Selectors.Options.Help" value="La liste des options - chaque option sur sa propre ligne." />
+  <string key="Fields.Selectors.SelectMultiple.Label" value="S&#233;lection multiple" />
+  <string key="Fields.Selectors.SelectMultiple.Help" value="Lorsque coch&#233;e, il sera possible de choisir plusieurs options." />
+  <string key="Fields.Selector.DataTypeName.Label" value="Nom du type de donn&#233;e" />
+  <string key="Fields.Selector.DataTypeName.Help" value="Le nom du type de donn&#233;es &#224; partir duquel choisir des options." />
+  <string key="Fields.Selector.ValueFieldName.Label" value="Nom de la valeur du champ" />
+  <string key="Fields.Selector.ValueFieldName.Help" value="L&#39;un des noms de champ de type de donn&#233;es sp&#233;cifi&#233; qui sera utilis&#233;e pour les valeurs d&#39;option." />
+  <string key="Fields.Selector.LabelFieldName.Label" value="Nom du libell&#233; du champ" />
+  <string key="Fields.Selector.LabelFieldName.Help" value="L&#39;un des noms de champ de type de donn&#233;es sp&#233;cifi&#233; qui sera utilis&#233;e pour des &#233;tiquettes d&#39;option." />
+  <string key="Fields.FileUpload.ButtonText.Label" value="Texte du bouton" />
+  <string key="Fields.FileUpload.ButtonText.Help" value="Le libell&#233; &#224; afficher sur le bouton &#39;Parcourir les fichiers &#39;." />
+  <string key="Fields.FileUpload.MaxFileCount.Label" value="Nombre maximum de fichiers" />
+  <string key="Fields.FileUpload.MaxFileCount.Help" value="Le nombre maximal de fichiers &#224; t&#233;l&#233;verser. Lorsque d&#233;pass&#233;, un avertissement sera affich&#233;." />
+  <string key="Fields.FileUpload.MaxSize.Label" value="Taille maximale" />
+  <string key="Fields.FileUpload.MaxSize.Help" value="La taille maximale du fichier en octets. Lorsque d&#233;pass&#233;e, un avertissement sera affich&#233;." />
+  <string key="Fields.FileUpload.Accept.Label" value="Accepter" />
+  <string key="Fields.FileUpload.Accept.Help" value="L&#39;attribut  &#171;accepter&#187;  de la balise&lt;input type=&#39;file&#39; /&gt;. Utilis&#233; pour les types de fichiers de filtrage. Exemples: 1) image / * &#39;pour les fichiers image 2)&#171; Audio / *&#39; pour les fichiers audio 3) video / * &#39;pour les fichiers vid&#233;o 4) application / pdf &#187;pour les documents PDF" />
+  <string key="Fields.FileUpload.Capture.Label" value="Capture" />
+  <string key="Fields.FileUpload.Capture.Help" value="Ajoute un attribut HTML &#39;capture&#39; attribuer cette fonction sur le Accepter champ sugg&#233;rer: 1) Prendre une photo pour &#39;image / *&#39; 2) Enregistrement d&#39;un audio pour &#39;audio / *&#39; 3) Capture d&#39;une vid&#233;o pour video / * &#187;" />
+  <string key="Fields.Selectors.Inline.Label" value="Afficher Inline" />
+  <string key="Fields.Selectors.Inline.Help" value="Lorsque coch&#233;e, les cases &#224; cocher seront affich&#233;es sur une seule ligne." />
+  <string key="Fields.CheckBox.CheckedByDefault.Label" value="Coch&#233;e par d&#233;faut" />
+  <string key="Fields.CheckBox.CheckedByDefault.Help" value="Lorsque coch&#233;e, le champ sera marqu&#233; comme coch&#233; par d&#233;faut." />
+  <string key="Fields.Heading.Heading.Label" value="Ent&#234;te" />
+  <string key="Fields.Heading.Heading.Help" value="Le titre de montrer." />
+  <string key="Fields.Heading.SubText.Label" value="Sous texte" />
+  <string key="Fields.Heading.SubText.Help" value="Le sous-texte &#224; afficher, le cas &#233;ch&#233;ant. Facultatif." />
+  <string key="Fields.Heading.Preview" value="[Rubrique]" />
+  <string key="Fields.Image.Image.Label" value="Image" />
+  <string key="Fields.Image.Image.Help" value="L&#39;image &#224; afficher." />
+  <string key="Fields.Image.Preview" value="[Image]" />
+  <string key="Fields.Text.Text.Label" value="Texte" />
+  <string key="Fields.Text.Text.Help" value="Le texte &#224; afficher." />
+  <string key="Fields.Text.Preview" value="[Texte]" />
+  <string key="Fields.RichText.Xhtml.Label" value="Contenu de texte riche" />
+  <string key="Fields.RichText.Xhtml.Help" value="Cliquez pour lancer l&#39;&#233;diteur Visual et de g&#233;rer le contenu de texte riche." />
+  <string key="Fields.RichText.Preview" value="[Texte riche]" />
+  <string key="Actions.SaveToFile.Label" value="Enregistrer les donn&#233;es dans un fichier" />
+  <string key="Actions.SaveToFile.Help" value="Enregistrer les donn&#233;es pr&#233;sent&#233;es dans un fichier. Les donn&#233;es enregistr&#233;es peuvent &#234;tre consult&#233;es et t&#233;l&#233;charg&#233;es avec Excel ou en format XML via le dossier Formulaire pr&#233;sent dans l&#39;arborescence de contenu." />
+  <string key="Actions.SendEmail.Label" value="Envoyer des donn&#233;es dans un courriel" />
+  <string key="Actions.SendEmail.Help" value="Envoyer un courriel avec une liste de valeurs des champs soumis." />
+  <string key="Actions.SendEmail.From.Label" value="&#192; partir de" />
+  <string key="Actions.SendEmail.From.Help" value="L&#39;adresse de courriel &#224; utiliser en tant qu&#39;exp&#233;diteur." />
+  <string key="Actions.SendEmail.To.Label" value="&#192;" />
+  <string key="Actions.SendEmail.To.Help" value="L&#39;adresse de courriel &#224; laquelle les donn&#233;es du formulaire doivent &#234;tre envoy&#233;es." />
+  <string key="Actions.SendEmail.Subject.Label" value="Sujet" />
+  <string key="Actions.SendEmail.Subject.Help" value="Le sujet du courriel. Si ce champ est laiss&#233; vide, le nom du formulaire sera utilis&#233;." />
+
+  <string key="SecurityHandlers.Https.Label" value="S&#233;curis&#233; (crypt&#233; https)" />
+  <string key="SecurityHandlers.Default.Label" value="Par d&#233;faut" />
+
+  <string key="Browse.TimeStamp" value="Date/heure" />
+</strings>

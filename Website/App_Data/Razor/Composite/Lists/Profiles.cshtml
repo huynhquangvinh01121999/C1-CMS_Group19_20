@@ -1,0 +1,127 @@
+﻿@inherits RazorFunction
+@using Composite.Lists.Profiles;
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Lists profiles on a page."; }
+    }
+
+    [FunctionParameter(Label = "Profile Group", Help = "When specified, profiles of this group will appear on the page. If none is selected (by default), all the groups will be listed.", DefaultValue = null)]
+    public DataReference<Group> ProfileGroup { get; set; }
+}
+@{
+    var routedData = new RoutedData.ByLabel<Profile>();
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+</head>
+    <body>
+        @if (routedData.IsItem)
+        {
+            @ProfilesList(new[] {routedData.Item})
+        }
+        else
+        {
+            var groups = Data.Get<Group>().OrderBy(gr => gr.Title).ToList();
+
+            if (ProfileGroup != null || groups.Count == 1)
+            {
+                var profiles = Data.Get<Profile>().Where(p => p.PageId == CurrentPageNode.Id);
+
+                if (ProfileGroup != null)
+                {
+                    Guid groupId = (Guid)ProfileGroup.KeyValue;
+                    profiles = profiles.Where(p => p.Group == groupId);
+                }
+
+                profiles = profiles.OrderBy(p => p.Priority);
+
+                @ProfilesList(profiles.ToList())
+            }
+            else
+            {
+                var allProfiles = Data.Get<Profile>().Where(p => p.PageId == CurrentPageNode.Id).OrderBy(p => p.Priority).ToList();
+
+                foreach (var group in groups)
+                {
+                    <h2>@group.Title</h2>
+
+                    var profiles = allProfiles.Where(p => p.Group == group.Id).ToList();
+                    @ProfilesList(profiles)
+                }
+            }
+        }
+
+    </body>
+</html>
+
+@helper ProfilesList(IList<Profile> profiles)
+{
+    var rowsCount = Math.Ceiling((double)profiles.Count / 3);
+    <div class="profiles-list">
+        @for (var i = 0; i < rowsCount; i++)
+        {
+            <div class="row">
+                @for (var j = 0; j < 3; j++)
+                {
+                    var index = i * 3 + j;
+                    if (index >= profiles.Count) { break; }
+                    var profile = profiles[index];
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="thumbnail">
+                            @if (!string.IsNullOrEmpty(profile.Image))
+                            {
+                                <img alt="@profile.Name" src="@Html.C1().MediaUrl(@profile.Image)" class="img-responsive" />
+                            }
+                            <div class="caption text-center">
+                                <p class="text-muted">
+                                    @profile.Title
+                                </p>
+                                <h3>
+                                    @profile.Name
+                                </h3>
+                                @if (!string.IsNullOrEmpty(profile.Statement))
+                                {
+                                    <p>
+                                        <em><q>@profile.Statement</q></em>
+                                    </p>
+                                }
+                                @if (!string.IsNullOrEmpty(profile.Description))
+                                {
+                                    <p>@profile.Description</p>
+                                }
+
+                                @if (!string.IsNullOrEmpty(profile.Email))
+                                {
+                                    <p><a href="mailto:@profile.Email">@profile.Email</a></p>
+                                }
+
+                                <ul class="list-inline">
+                                    @if (!string.IsNullOrEmpty(profile.TwitterUsername))
+                                    {
+                                        <li>
+                                            <a href="https://twitter.com/@profile.TwitterUsername" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    }
+                                    @if (!string.IsNullOrEmpty(profile.LinkedInLink))
+                                    {
+                                        <li>
+                                            <a href="@profile.LinkedInLink" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    }
+                                    @if (!string.IsNullOrEmpty(profile.FacebookLink))
+                                    {
+                                        <li>
+                                            <a href="@profile.FacebookLink" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

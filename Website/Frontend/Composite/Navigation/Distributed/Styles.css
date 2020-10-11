@@ -1,0 +1,19 @@
+.nav-distributed .nav > li > a {
+    padding-left: 30px;
+}
+
+.nav-distributed .nav .nav > li > a {
+    padding-left: 45px;
+}
+
+.nav-distributed .nav .nav .nav > li > a {
+    padding-left: 60px;
+}
+
+.nav-distributed .nav .nav .nav .nav > li > a {
+    padding-left: 75px;
+}
+
+.nav-distributed .nav .nav .nav .nav .nav > li > a {
+    padding-left: 85px;
+}

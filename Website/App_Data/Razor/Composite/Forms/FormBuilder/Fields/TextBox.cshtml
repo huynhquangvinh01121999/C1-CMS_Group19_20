@@ -1,0 +1,92 @@
+﻿@inherits RazorFunction
+
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A form input text field."; }
+    }
+    
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue = null)]
+    public string Name { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+    public string Label { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_PlaceholderText_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_PlaceholderText_Help)]
+	public string PlaceholderText { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+	public string Help { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Required_Label, DefaultValue = false, Help = Localization.Constants.Fields_Parameters_Required_Help)]
+    public bool Required { get; set; }
+    
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_DefaultValue_Label, DefaultValue = "", Help = Localization.Constants.Fields_Parameters_DefaultValue_Help)]    
+    public string DefaultValue { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_TextBox_MaxLength_Label, DefaultValue = null, Help = Localization.Constants.Fields_TextBox_MaxLength_Help)]
+	public int? MaxLength { get; set; }
+}
+
+@{
+    Name = string.IsNullOrEmpty(Name) ? Label : Name;
+
+    var formContext = FormHelper.GetFormContext();
+    string clientId = formContext.BuildFieldClientId(Name);    
+    
+    string value;
+
+    if (!formContext.IsFormSubmit)
+    {
+        value = DefaultValue;
+    }
+    else 
+    {
+
+        value = Request.Unvalidated[clientId];
+
+		formContext.Result.Add(Name, Label, typeof(string), value);
+        
+        // Validation
+        
+        if (Required && string.IsNullOrEmpty(value))
+        {
+			formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldRequired, Label));
+        }
+                    
+        if (MaxLength.HasValue && value.Length > MaxLength.Value) 
+        {
+			formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldTooLong, Label, MaxLength.Value));
+        }
+    }
+
+	string requiredClass = Required ? "required" : "";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    </head>
+    <body>
+        <div class="form-group @clientId @requiredClass">
+            <label for="@clientId" class="control-label">
+                @Label @if (Required) { <abbr title="@Resources.FormBuilder.WCAG_required"></abbr> }
+            </label>
+
+			<input type="text" 
+				   class="form-control no-submit @requiredClass" 
+				   id="@clientId" 
+				   name="@clientId" 
+				   value="@value"
+				   placeholder="@PlaceholderText"
+				   maxlength="@MaxLength" />
+
+			@if(!string.IsNullOrWhiteSpace(Help)) 
+			{
+				<p class="help-block">@Help</p>
+			}
+        </div>
+    </body>
+</html>
+

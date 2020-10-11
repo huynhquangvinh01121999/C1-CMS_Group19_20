@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data/Razor/Orckestra/Web/Html/StatementTeaser.cshtml" />
+        <File filename="~\App_Data/Components/Orckestra/Web/Html/StatementTeaser.xml" />
+        <File filename="~\Frontend\Orckestra\Web\Html\StatementTeaser\statement-teaser.png" />
+        <File filename="~\Frontend\Orckestra\Web\Html\StatementTeaser\styles.css" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

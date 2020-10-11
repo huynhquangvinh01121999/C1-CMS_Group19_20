@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IPageStructure,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="f98ede8d-2fba-4dbf-a97b-1d6e6c2e6fd2" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="98064ce4-7f92-42c8-8022-8e687886845c" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="f98ede8d-2fba-4dbf-a97b-1d6e6c2e6fd2" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="98064ce4-7f92-42c8-8022-8e687886845c" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="f98ede8d-2fba-4dbf-a97b-1d6e6c2e6fd2" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="98064ce4-7f92-42c8-8022-8e687886845c" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="f98ede8d-2fba-4dbf-a97b-1d6e6c2e6fd2" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="98064ce4-7f92-42c8-8022-8e687886845c" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="f98ede8d-2fba-4dbf-a97b-1d6e6c2e6fd2" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="98064ce4-7f92-42c8-8022-8e687886845c" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

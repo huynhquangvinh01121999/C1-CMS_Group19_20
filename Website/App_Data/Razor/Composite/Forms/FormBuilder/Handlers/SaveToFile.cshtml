@@ -1,0 +1,20 @@
+﻿@inherits RazorFunction
+
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Saves submitted values into the specified data type."; }
+    }
+}
+
+@{
+    var formData = FormHelper.GetFormData();
+    if (formData == null)
+    {
+        return;
+    }
+
+    CommonFileUtils.SaveFormData(formData);
+}

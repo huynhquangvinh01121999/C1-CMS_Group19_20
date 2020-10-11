@@ -1,0 +1,38 @@
+﻿@inherits RazorFunction
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Lists submitted values in a table."; }
+    }
+}
+
+@{
+    var formData = FormHelper.GetFormData();
+    if (formData == null)
+    {
+        return;
+    }
+}
+
+<table xmlns="http://www.w3.org/1999/xhtml">
+    
+    @foreach (var field in formData.Fields)
+    {
+        if (field.IsFile)
+        {
+            continue;
+        }
+        
+        <tr>
+            <td>
+                <strong>@field.Label</strong>
+            </td>
+            <td>
+                @field.Value
+            </td>
+        </tr>
+    }
+
+</table>

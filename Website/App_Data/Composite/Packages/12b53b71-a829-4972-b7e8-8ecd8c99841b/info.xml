@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Orckestra.StarterSite.Components" groupName="Orckestra.StarterSite" version="1.0.5" author="Orckestra A/S" website="https://c1.orckestra.com/" description="--" installDate="2020-10-11T14:33:24.9836653+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="true" reloadConsoleOnCompletion="false" systemLocking="none" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

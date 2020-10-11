@@ -1,0 +1,251 @@
+@using System.Configuration
+@using System.Threading
+@using System.Web.Configuration
+@using Composite.C1Console.Security
+@using Composite.Core
+@using Composite.Forms.FormBuilder
+
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Shows an input form a user can fill in and submit."; }
+    }
+
+    [FunctionParameter(Label = "Form Name")]
+    public string Name { get; set; }
+    
+    [FunctionParameter(WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public XElement Fields { get; set; }
+
+    [FunctionParameter(Label = "Submit Button Label", DefaultValue = "Submit")]
+    public string SubmitButtonLabel { get; set; }
+    
+    [FunctionParameter(WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public XElement Actions { get; set; }
+
+    [FunctionParameter(Help = "Placeholder for output handlers and messages to be shown on success.", WidgetFunctionName = "Composite.Widgets.String.VisualXhtmlEditor")]
+    public Lazy<XhtmlDocument> Receipt { get; set; }
+
+    [FunctionParameter(Label = "Failure message", DefaultValue = null)]
+    public Lazy<XhtmlDocument> FailureMessage { get; set; }
+
+    [FunctionParameter(Label = "Security Handler", DefaultValue = null, WidgetFactoryMethod = "SecurityHandlerDropDown")]
+    public string SecurityHandler { get; set; }
+
+    [FunctionParameter(Label = "Use CAPTCHA", DefaultValue = false)]
+    public bool UseCaptcha { get; set; }
+
+    public static WidgetFunctionProvider SecurityHandlerDropDown()
+    {
+        Expression<Func<object>> expression = () => GetCategoryOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", false, false);
+    }
+
+    public static Tuple<string, string>[] GetCategoryOptions()
+    {
+        return FormHelper.GetSecurityHandlers();
+    }    
+}
+
+@{
+    if (!License.IsValid)
+    {
+        <p>
+            @Resources.FormBuilder.Errors_ExpiredLicense
+            
+            <a target="_blank" href="http://docs.composite.net/Composite.Forms.FormBuilder">http://docs.composite.net/Composite.Forms.FormBuilder</a>
+        </p>
+        return;
+    }
+
+    // Processing "Actions" markup to validate it.
+    var actionsMarkup = new XElement(Actions);
+    FormHelper.ActionsToFunctionCalls(actionsMarkup);
+
+    string clientId = "form" + (Name ?? "").GetHashCode();
+
+    Guid stateId;
+    if (FormHelper.IsSubmitRequest(out stateId))
+    {
+        if (!FormHelper.LoadPersistedContext(stateId))
+        {
+            @Resources.FormBuilder.Errors_ExpiredLink
+            return;
+        }
+        
+        @Submit(clientId, actionsMarkup)
+
+        FormHelper.RemoveState(stateId);
+        return;
+    }
+
+    
+    bool isPost = Request.HttpMethod == "POST" && Request.Form["formname"] == Name;
+    
+    if (isPost)
+    {
+        // Preventing OutputCacheModule from validating the posted form data
+        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    }
+    
+    Guid formId = isPost ? new Guid(Request.Form["formid"]) : Guid.NewGuid();
+    
+    var formContext = new FormContext { IsFormSubmit = isPost, FormName = Name, FormId = formId};
+
+    FormHelper.SetContext(formContext);
+
+    var prerequisites = FormHelper.ExecuteSecurityHandler(SecurityHandler, SecurityHandlerStep.Prerequisites, FunctionContextContainer);
+    if (formContext.PrerequisitesFailed)
+    {
+        @Render(prerequisites)
+        return;
+    }
+
+    var markup = new XElement(Fields);
+
+    FormHelper.FieldsToFunctionCalls(markup);
+
+    if (UseCaptcha)
+    {
+        markup.Add(new XElement(Namespaces.Function10 + "function", new XAttribute("name", "Composite.Forms.FormBuilder.Fields.CAPTCHA")));
+    }
+
+    FormHelper.ExecuteFormMarkup(markup, this.FunctionContextContainer);
+
+    bool postSuccessfull = isPost && !formContext.ValidationFailed;
+
+    if (postSuccessfull)
+    {
+        var postRequisitesResult = FormHelper.ExecuteSecurityHandler(SecurityHandler, SecurityHandlerStep.Postrequisites, FunctionContextContainer);
+
+        if (!formContext.SubmitPostponed)
+        {
+            @Submit(clientId, actionsMarkup)
+        }
+        else
+        {
+            @Render(postRequisitesResult)
+        }
+
+        return;
+    }
+
+    long maxRequestLengthInKilobytes = (ConfigurationManager.GetSection("system.web/httpRuntime") as HttpRuntimeSection).MaxRequestLength;
+    long maxuploadsize = (maxRequestLengthInKilobytes - 100) * 1024; /* ... - 100kb for other form post data */
+    decimal maxuploadsizeInMegabytes = Decimal.Round(maxuploadsize / 1024m / 1024m,1);
+    string fileUploadLimitMessage = string.Format(Resources.FormBuilder.ClientValidation_UploadSizeLimit, maxuploadsizeInMegabytes);
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script id="jquery-validate-js" type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="~/Frontend/Composite/Forms/FormBuilder/Form.js"></script>
+        <link  rel="stylesheet" type="text/css" href="~/Frontend/Composite/Forms/FormBuilder/Styles/Composite.Forms.FormBuilder.less" />
+        <script id="jquery-validate-extend-js" type="text/javascript">
+            jQuery.extend(jQuery.validator.messages, {
+                required: "@HttpUtility.JavaScriptStringEncode(@Resources.FormBuilder.ClientValidation_FieldRequired)"
+            });
+        </script>
+    </head>
+    <body>
+        <form class="formbuilder form-horizontal" method="post" enctype="multipart/form-data" xmlns="http://www.w3.org/1999/xhtml" 
+              role="form" action="#@clientId" id="@clientId"
+              maxuploadsize="@maxuploadsize" maxuploadsizemessage="@fileUploadLimitMessage">
+            
+            @foreach (var node in markup.Nodes())
+            {
+                @Markup(node)
+            }
+
+            @if (formContext.ErrorDescriptions.Any())
+            {
+                <div class="validationErrors">
+
+                    @foreach (var errorDescription in formContext.ErrorDescriptions)
+                    {
+                        <div class="error">@errorDescription </div>
+                    }
+                </div>
+            }
+            
+            <input type="hidden" name="formname" value="@Name" />
+            <input type="hidden" name="formid" value="@formId" />
+            <div>
+                <button type="submit" class="btn btn-primary">@SubmitButtonLabel</button>
+            </div>
+        </form>
+		<script>
+		    $(function () {
+		        $("input.no-submit").keypress(function (e) {
+		            var k = e.keyCode || e.which;
+		            if (k == 13) {
+		                e.preventDefault();
+		            }
+		        });
+		    });
+		</script>
+    </body>
+</html>
+
+@helper Render(IEnumerable<XNode> nodes)
+{
+
+    foreach (var xNode in nodes)
+    {
+        @Markup(xNode);
+    }   
+}
+
+@helper Submit(string formClientId, XElement dataHandlersMarkup)
+{
+    bool success = true;
+
+    XhtmlDocument output = null;
+
+    try
+    {
+        FormHelper.ExecuteFormMarkup(dataHandlersMarkup, this.FunctionContextContainer);
+
+        output = Receipt.Value;
+    }
+    catch (ThreadAbortException)
+    {
+    }
+    catch (Exception ex)
+    {
+        if (UserValidationFacade.IsLoggedIn())
+        {
+            throw;
+        }
+
+        success = false;
+        Log.LogError("FormBuilder", ex);
+    }
+
+    if (success)
+    {
+        <html xmlns="http://www.w3.org/1999/xhtml">
+            <head></head>
+            <body>
+                <a name="@formClientId"></a>
+                @Markup(output)
+            </body>
+        </html>
+    }
+    else
+    {
+        if (FailureMessage != null)
+        {
+            @Markup(FailureMessage.Value)
+        }
+        else
+        {
+            @Resources.FormBuilder.Errors_UnhandledError
+        }
+    }
+}

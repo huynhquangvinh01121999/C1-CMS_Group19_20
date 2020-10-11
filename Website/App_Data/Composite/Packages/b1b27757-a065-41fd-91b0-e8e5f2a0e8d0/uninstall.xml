@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\Bin\Orckestra.Web.Css.Less.dll" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\lessc.cmd" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lessc" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/browser.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/colors.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/env.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/extend-visitor.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/functions.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/import-visitor.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/index.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/join-selector-visitor.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/lessc_helper.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/parser.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/rhino.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/alpha.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/anonymous.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/assignment.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/call.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/color.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/comment.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/condition.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/dimension.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/directive.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/element.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/expression.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/extend.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/import.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/javascript.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/keyword.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/media.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/mixin.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/negative.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/operation.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/paren.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/quoted.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/ratio.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/rule.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/ruleset.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/selector.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/unicode-descriptor.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/url.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/value.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/tree/variable.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\less/lib/less/visitor.js" />
+        <File filename="~\Frontend\Orckestra\Web\Css\Less\node.exe" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" version="1.0.0.0" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller,Composite">
+      <XslFiles xmlns="">
+        <XslFile pathXml="~/Web.config" installXsl="~\Web.config\Install.xsl" uninstallXsl="~\Web.config\Uninstall.xsl" />
+      </XslFiles>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

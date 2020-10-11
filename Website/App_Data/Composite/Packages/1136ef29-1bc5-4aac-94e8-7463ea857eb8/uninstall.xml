@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\PageTemplates\Frontpage.cshtml" />
+        <File filename="~\App_Data\PageTemplates\MasterLayout.cshtml" />
+        <File filename="~\App_Data\PageTemplates\Page with left aside.cshtml" />
+        <File filename="~\App_Data\PageTemplates\Page with navigation and right aside.cshtml" />
+        <File filename="~\App_Data\PageTemplates\Page with navigation.cshtml" />
+        <File filename="~\App_Data\PageTemplates\Page with right aside.cshtml" />
+        <File filename="~\App_Data\PageTemplates\Page with right navigation.cshtml" />
+        <File filename="~\App_Data\PageTemplates\Page.cshtml" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

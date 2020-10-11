@@ -1,0 +1,24 @@
+﻿.nav  > li {
+    > a {
+        font-weight: bold;
+    }
+
+	&.disabled > a {
+		font-weight: normal;
+	}
+}
+
+.nav-sidebar .nav  > li {
+    > a {
+        color: @gray-darker;
+
+        &:hover {
+			color: @brand-primary;
+        }
+    }
+
+    &.open > a, &.active > a, &.active > a:hover {
+       color: @brand-primary;
+       background: none;
+    }
+}

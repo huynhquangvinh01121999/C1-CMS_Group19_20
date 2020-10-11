@@ -1,0 +1,63 @@
+﻿@inherits RazorFunction
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A form input checkbox field."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue=null)]
+    public string Name { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+	public string Label { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+	public string Help { get; set; }
+
+	[FunctionParameter(Label = Localization.Constants.Fields_CheckBox_CheckedByDefault_Label, DefaultValue = false, Help = Localization.Constants.Fields_CheckBox_CheckedByDefault_Help)]
+    public bool CheckedByDefault { get; set; }
+}
+
+@{
+	Name = string.IsNullOrEmpty(Name) ? Label : Name;
+    
+    var formContext = FormHelper.GetFormContext();
+    string clientId = formContext.BuildFieldClientId(Name);
+    
+    bool isChecked = CheckedByDefault;
+
+    if (formContext.IsFormSubmit)
+    {
+        isChecked = Request[clientId] == "1";
+
+		formContext.Result.Add(Name, Label, typeof(bool), isChecked);
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    </head>
+    <body>
+        <div class="form-group @clientId">
+            <div class="checkbox">
+                <label for="@clientId" class="control-label">
+
+                    <input type="checkbox" 
+                           id="@clientId" 
+                           name="@clientId"
+						   value="1" 
+                        @if(isChecked) { <text>checked="checked"</text>}  />
+
+                    @Label
+                </label>
+                @if(!string.IsNullOrWhiteSpace(Help)) 
+                {
+                    <p class="help-block">@Help</p>
+                }
+            </div>
+        </div>
+    </body>
+</html>
+

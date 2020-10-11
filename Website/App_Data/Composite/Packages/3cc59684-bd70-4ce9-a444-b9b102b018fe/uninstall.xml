@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Razor\Orckestra\Web\Html\TeaserCards\IconTeaser.cshtml" />
+        <File filename="~\App_Data\Razor\Orckestra\Web\Html\TeaserCards\IconTeasersInColumns.cshtml" />
+        <File filename="~\App_Data\Razor\Orckestra\Web\Html\TeaserCards\ImageTeaser.cshtml" />
+        <File filename="~\App_Data\Razor\Orckestra\Web\Html\TeaserCards\ImageTeasersInColumns.cshtml" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\columnswithiconteasers.png" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\columnswithimageteasers.png" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\iconteaser.png" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\imageteaser.png" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\styles.css" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\styles.less" />
+        <File filename="~\Frontend\Orckestra\Web\Html\TeaserCards\styles.min.css" />
+        <File filename="~\App_Data\Components\Orckestra\Web\Html\TeaserCards\ColumnsWithIconTeasers.xml" />
+        <File filename="~\App_Data\Components\Orckestra\Web\Html\TeaserCards\ColumnsWithImageTeasers.xml" />
+        <File filename="~\App_Data\Components\Orckestra\Web\Html\TeaserCards\IconTeaser.xml" />
+        <File filename="~\App_Data\Components\Orckestra\Web\Html\TeaserCards\ImageTeaser.xml" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="" />
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

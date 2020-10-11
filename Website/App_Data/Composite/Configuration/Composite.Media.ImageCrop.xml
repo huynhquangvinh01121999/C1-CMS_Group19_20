@@ -1,0 +1,9 @@
+<configuration>
+  <AspectRatio>
+    <add name="${Composite.Media.ImageCrop,AspectRatio.Landscape}" width="16" height="9" />
+    <add name="${Composite.Media.ImageCrop,AspectRatio.Portrait}" width="9" height="16" />
+  </AspectRatio>
+  <Settings>
+    <add name="JpegQuality" value="80" />
+  </Settings>
+</configuration>

@@ -1,0 +1,33 @@
+﻿@using Composite.Community.Blog
+@inherits RazorFunction
+@functions {
+    public override string FunctionDescription
+    {
+        get { return @"Shows the latest five posts from all the blogs on the website."; }
+    }
+
+    [FunctionParameter(Label = "Count of items", Help = "The number of latest blog entries to display (5 by default).", DefaultValue = 5)]
+    public int Count { get; set; }// TODO: convert default value function markup
+}
+@{
+	var entries = Data.Get<Entries>().OrderByDescending(e => e.Date).Take(Count);
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <div class="list-group">
+        @foreach (var entry in entries)
+        {
+            var blogUrl = BlogFacade.GetBlogUrl(entry);
+            <a href="@blogUrl" title="@entry.Title" class="list-group-item">
+                <h4 class="list-group-item-heading">@entry.Title</h4>
+                <small class="text-muted">@entry.Date.ToShortDateString()</small>
+                <p class="list-group-item-text">@entry.Teaser</p>
+            </a>
+        }
+    </div>
+</body>
+</html>
+

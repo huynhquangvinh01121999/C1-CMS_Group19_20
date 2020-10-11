@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageTypeElementsElements>
+  <PageTypeElements Id="bea4f923-4b10-44e7-b290-c2c0ca671ea7" Name="Blog" Description="Sets up blog on a page" Available="true" PresetMenuTitle="true" DefaultTemplateId="9f096519-d21c-435e-b334-62224fde2ab3" HomepageRelation="NoRestriction" DefaultChildPageType="00000000-0000-0000-0000-000000000000" />
+  <PageTypeElements Id="de22fed1-0729-4ad3-aa1c-6047e54bf429" Name="Home" Description="" Available="true" PresetMenuTitle="true" DefaultTemplateId="a270f819-0b5c-4f7e-9194-4b554043e4ab" HomepageRelation="OnlyHomePages" DefaultChildPageType="f7869eb2-7369-4eb2-af47-e3be261e92c7" />
+  <PageTypeElements Id="f7869eb2-7369-4eb2-af47-e3be261e92c7" Name="Page" Description="" Available="true" PresetMenuTitle="true" DefaultTemplateId="0526ad34-c540-418e-8c23-0eec2a8da2ce" HomepageRelation="OnlySubPages" DefaultChildPageType="f7869eb2-7369-4eb2-af47-e3be261e92c7" />
+</PageTypeElementsElements>

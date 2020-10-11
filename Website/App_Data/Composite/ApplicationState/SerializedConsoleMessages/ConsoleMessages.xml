@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConsoleMessageQueueElements>
+  <QueueElement time="2020-10-11T14:34:26.5362933+07:00" number="2" itemtype="Composite.C1Console.Events.RefreshTreeMessageQueueItem">
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Events\.RefreshTreeMessageQueueItemSerializerHandler,Composite'SerializedObject='\{&quot;Type&quot;:&quot;&quot;,&quot;Source&quot;:&quot;PageElementProvider&quot;,&quot;Id&quot;:&quot;&quot;,&quot;meta:type&quot;:&quot;Composite\.Plugins\.Elements\.ElementProviders\.PageElementProvider\.PageElementProviderEntityToken,\ Composite&quot;}'" />
+  </QueueElement>
+  <QueueElement time="2020-10-11T14:34:30.0286795+07:00" number="3" itemtype="Composite.C1Console.Events.RefreshTreeMessageQueueItem">
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Events\.RefreshTreeMessageQueueItemSerializerHandler,Composite'SerializedObject='\{&quot;Type&quot;:&quot;&quot;,&quot;Source&quot;:&quot;PageElementProvider&quot;,&quot;Id&quot;:&quot;&quot;,&quot;meta:type&quot;:&quot;Composite\.Plugins\.Elements\.ElementProviders\.PageElementProvider\.PageElementProviderEntityToken,\ Composite&quot;}'" />
+  </QueueElement>
+  <QueueElement time="2020-10-11T14:34:33.3097482+07:00" number="4" itemtype="Composite.C1Console.Events.RefreshTreeMessageQueueItem">
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Events\.RefreshTreeMessageQueueItemSerializerHandler,Composite'SerializedObject='\{&quot;Type&quot;:&quot;&quot;,&quot;Source&quot;:&quot;PageElementProvider&quot;,&quot;Id&quot;:&quot;&quot;,&quot;meta:type&quot;:&quot;Composite\.Plugins\.Elements\.ElementProviders\.PageElementProvider\.PageElementProviderEntityToken,\ Composite&quot;}'" />
+  </QueueElement>
+  <QueueElement time="2020-10-11T14:34:41.4488838+07:00" number="5" itemtype="Composite.C1Console.Events.RefreshTreeMessageQueueItem">
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Events\.RefreshTreeMessageQueueItemSerializerHandler,Composite'SerializedObject='\{&quot;Type&quot;:&quot;&quot;,&quot;Source&quot;:&quot;PageElementProvider&quot;,&quot;Id&quot;:&quot;&quot;,&quot;meta:type&quot;:&quot;Composite\.Plugins\.Elements\.ElementProviders\.PageElementProvider\.PageElementProviderEntityToken,\ Composite&quot;}'" />
+  </QueueElement>
+  <QueueElement time="2020-10-11T14:34:46.7020724+07:00" number="6" itemtype="Composite.C1Console.Events.RefreshTreeMessageQueueItem">
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Events\.RefreshTreeMessageQueueItemSerializerHandler,Composite'SerializedObject='\{&quot;Type&quot;:&quot;&quot;,&quot;Source&quot;:&quot;PageElementProvider&quot;,&quot;Id&quot;:&quot;&quot;,&quot;meta:type&quot;:&quot;Composite\.Plugins\.Elements\.ElementProviders\.PageElementProvider\.PageElementProviderEntityToken,\ Composite&quot;}'" />
+  </QueueElement>
+  <QueueElement time="2020-10-11T14:34:48.8735811+07:00" number="7" itemtype="Composite.C1Console.Events.RefreshTreeMessageQueueItem">
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Events\.RefreshTreeMessageQueueItemSerializerHandler,Composite'SerializedObject='\{&quot;Type&quot;:&quot;&quot;,&quot;Source&quot;:&quot;PageElementProvider&quot;,&quot;Id&quot;:&quot;&quot;,&quot;meta:type&quot;:&quot;Composite\.Plugins\.Elements\.ElementProviders\.PageElementProvider\.PageElementProviderEntityToken,\ Composite&quot;}'" />
+  </QueueElement>
+</ConsoleMessageQueueElements>

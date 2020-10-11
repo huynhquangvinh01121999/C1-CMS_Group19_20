@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+
+  <string key="ElementProvider.Root.Label" value="Form Submissions" />
+  <string key="ElementProvider.Root.ToolTip" value="Browse submitted data here." />
+  <string key="ElementProvider.Browse.Label" value="Browse" />
+  <string key="ElementProvider.Browse.ToolTip" value="Browse submitted form data." />
+  <string key="ElementProvider.DownloadAction.Label" value="Download as XML" />
+  <string key="ElementProvider.DownloadAction.ToolTip" value="Downloads submitted data as an XML file." />
+  <string key="ElementProvider.ExportToExcel.Label" value="Export to Excel" />
+  <string key="ElementProvider.ExportToExcel.ToolTip" value="Downloads submitted data in Excel format." />
+  <string key="ElementProvider.Delete.Label" value="Delete" />
+  <string key="ElementProvider.Delete.ToolTip" value="Permanently deletes all data associated with this form." />
+
+  <string key="Editor.Title" value="Form Builder" />
+  <string key="Editor.Tabs.Settings" value="Settings" />
+  <string key="Editor.Tabs.Designer" value="Designer" />
+  <string key="Editor.Tabs.Actions" value="Submit Actions" />
+  <string key="Editor.Tabs.Receipt" value="Receipt" />
+  <string key="Editor.Settings.Name.Label" value="Name" />
+  <string key="Editor.Settings.Name.Help" value="The name of the form. When data is saved, this name is used to identify the form." />
+  <string key="Editor.Settings.SubmitButtonLabel.Label" value="Submit Button Label" />
+  <string key="Editor.Settings.SubmitButtonLabel.Help" value="The label of the button that submits the form. Shown below the form fields." />
+  <string key="Editor.Settings.Security.Label" value="Security" />
+  <string key="Editor.Settings.Security.Help" value="If special security rules have been created for your website, select which one to use. This could be rules like 'use secure https encryption' or 'only show form to extranet users'. Select 'Default' if this is not a concern." />
+  <string key="Editor.Settings.CAPTCHA.Label1" value="Anti Spam Protection" />
+  <string key="Editor.Settings.CAPTCHA.Label2" value="Use CAPTCHA" />
+  <string key="Editor.Settings.CAPTCHA.Help" value="When checked, the form will contain a CAPTCHA field. This will limit spam on your website." />
+  <string key="Editor.Fields.AddComponent" value="Add Component" />
+  <string key="Editor.Fields.DropComponentsHere" value="Drop components here" />
+  <string key="Editor.Fields.PreviewError" value="Error previewing the element." />
+  <string key="Editor.Fields.DescriptionFieldGroup.Label" value="Description" />
+  <string key="Editor.Fields.ValidationFieldGroup.Label" value="Validation" />
+  <string key="Editor.Fields.AdvancedFieldGroup.Label" value="Advanced" />
+  <string key="Editor.Receipt.DefaultText" value="Thank you! We have received your input." />
+
+  <string key="Editor.SaveError.AlertTitle" value="Error saving the form." />
+  <string key="Editor.SaveError.NoActionSelected" value="At least one action has to be selected." />
+  <string key="ActionEditor.EnableLabel" value="Action" />
+  <string key="FieldGroup.Standard" value="Component library" />
+  <string key="FieldGroup.TextAndDecorations" value="Text &amp; decorations" />
+
+  <string key="Fields.TextBox" value="Text Box" />
+  <string key="Fields.TextArea" value="Text Area" />
+  <string key="Fields.CheckBox" value="Check Box" />
+  <string key="Fields.CheckBoxList" value="Check Box List" />
+  <string key="Fields.DropDown" value="Drop Down" />
+  <string key="Fields.MultiSelector" value="Multi Selector" />
+  <string key="Fields.RadioButtons" value="Radio Buttons" />
+  <string key="Fields.Date" value="Date" />
+  <string key="Fields.Email" value="Email" />
+  <string key="Fields.FileUpload" value="File Upload" />
+  <string key="Fields.MultiFileUpload" value="Multi File Upload" />
+  <string key="Fields.ImageUpload" value="Image Upload" />
+  <string key="Fields.MultipleImageUpload" value="Multiple Image Upload" />
+
+  <string key="Fields.Decoration.Heading" value="Heading" />
+  <string key="Fields.Decoration.Text" value="Text" />
+  <string key="Fields.Decoration.Separator" value="Separator" />
+  <string key="Fields.Decoration.Image" value="Image" />
+  <string key="Fields.Decoration.RichText" value="Rich Text (HTML)" />
+
+  <string key="Fields.Parameters.Name.Label" value="Field Name" />
+  <string key="Fields.Parameters.Name.Help" value="The Field Name is used to identify the field when storing data. If you need to structure the data you can specify a specific name here. Leave this field empty to reuse the value specified in Label." />
+  <string key="Fields.Parameters.Label.Label" value="Label" />
+  <string key="Fields.Parameters.Label.Help" value="The field label, typically shown above the field." />
+  <string key="Fields.Parameters.Help.Label" value="Help Text" />
+  <string key="Fields.Parameters.Help.Help" value="A longer text helping the user understand how to fill in the field." />
+  <string key="Fields.Parameters.PlaceholderText.Label" value="Hint Text" />
+  <string key="Fields.Parameters.PlaceholderText.Help" value="A short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format). The hint text is displayed in the input field before the user enters a value. Also known as a placeholder text." />
+  <string key="Fields.Parameters.Required.Label" value="Is Required" />
+  <string key="Fields.Parameters.Required.Help" value="When checked, the form field becomes required - it must contain a value before the form can be sent." />
+  <string key="Fields.Parameters.DefaultValue.Label" value="Default Value" />
+  <string key="Fields.Parameters.DefaultValue.Help" value="The value to be shown in the field by default." />
+  <string key="Fields.TextBox.MaxLength.Label" value="Max Length" />
+  <string key="Fields.TextBox.MaxLength.Help" value="The maximum allowed length (number of characters the user can write). When exceeded, a warning will be shown." />
+  <string key="Fields.TextArea.Rows.Label" value="Rows" />
+  <string key="Fields.TextArea.Rows.Help" value="The amount of rows to be visible in the text area." />
+  <string key="Fields.Selectors.Options.Label" value="Options" />
+  <string key="Fields.Selectors.Options.Help" value="The list of options - each option on its own line." />
+  <string key="Fields.Selectors.SelectMultiple.Label" value="Select Multiple" />
+  <string key="Fields.Selectors.SelectMultiple.Help" value="When checked, it will be possible to choose multiple options." />
+  <string key="Fields.Selector.DataTypeName.Label" value="DataType Name" />
+  <string key="Fields.Selector.DataTypeName.Help" value="The name of the data type to choose options from." />
+  <string key="Fields.Selector.ValueFieldName.Label" value="Value Field Name" />
+  <string key="Fields.Selector.ValueFieldName.Help" value="One of the field names from the specified data type that will be used for option values." />
+  <string key="Fields.Selector.LabelFieldName.Label" value="Label Field Name" />
+  <string key="Fields.Selector.LabelFieldName.Help" value="One of the field names from the specified data type that will be used for option labels." />
+  <string key="Fields.FileUpload.ButtonText.Label" value="Button Text" />
+  <string key="Fields.FileUpload.ButtonText.Help" value="The label to show on the 'Browse Files' button." />
+  <string key="Fields.FileUpload.MaxFileCount.Label" value="Maximum Files" />
+  <string key="Fields.FileUpload.MaxFileCount.Help" value="The maximum number of files to be uploaded.  When exceeded, a warning will be shown." />
+  <string key="Fields.FileUpload.MaxSize.Label" value="Maximum Size" />
+  <string key="Fields.FileUpload.MaxSize.Help" value="Maximum file size in bytes.  When exceeded, a warning will be shown." />
+  <string key="Fields.FileUpload.Accept.Label" value="Accept" />
+  <string key="Fields.FileUpload.Accept.Help" value="The 'accept' attribute on the &lt;input type='file' /&gt; tag. Used for filtering file types. Examples: 
+1) 'image/*' for image files
+2) 'Audio/*' for audio files
+3) 'video/*' for video files
+4) 'application/pdf' for PDF documents" />
+  <string key="Fields.FileUpload.Capture.Label" value="Capture" />
+  <string key="Fields.FileUpload.Capture.Help" value="Adds an HTML 'capture' attribute that depending on the 'Accept' field will suggest: 
+1) Taking a picture for 'image/*' 
+2) Recording an audio for 'audio/*'
+3) Capturing a video for 'video/*'" />
+  <string key="Fields.Selectors.Inline.Label" value="Show Inline" />
+  <string key="Fields.Selectors.Inline.Help" value="When checked, the check boxes will be shown in one line." />
+  <string key="Fields.CheckBox.CheckedByDefault.Label" value="Checked By Default" />
+  <string key="Fields.CheckBox.CheckedByDefault.Help" value="When checked, the field will be marked as checked by default." />
+  <string key="Fields.Heading.Heading.Label" value="Heading" />
+  <string key="Fields.Heading.Heading.Help" value="The headline to show." />
+  <string key="Fields.Heading.SubText.Label" value="Sub Text" />
+  <string key="Fields.Heading.SubText.Help" value="The sub text to show, if any. Optional." />
+  <string key="Fields.Heading.Preview" value="[heading]" />
+  <string key="Fields.Image.Image.Label" value="Image" />
+  <string key="Fields.Image.Image.Help" value="The image to show." />
+  <string key="Fields.Image.Preview" value="[image]" />
+  <string key="Fields.Text.Text.Label" value="Text" />
+  <string key="Fields.Text.Text.Help" value="The text to show." />
+  <string key="Fields.Text.Preview" value="[text]" />
+  <string key="Fields.RichText.Xhtml.Label" value="Rich text content" />
+  <string key="Fields.RichText.Xhtml.Help" value="Click to launch the Visual Editor and manage the rich text content." />
+  <string key="Fields.RichText.Preview" value="[rich text]" />
+  <string key="Actions.SaveToFile.Label" value="Save data to a file" />
+  <string key="Actions.SaveToFile.Help" value="Save the submitted data to a file. Saved data can be browsed and downloaded as Excel or XML via the &quot;Form Submissions&quot; folder in the Content tree." />
+  <string key="Actions.SendEmail.Label" value="Send data in an email" />
+  <string key="Actions.SendEmail.Help" value="Send an email with a list of submitted field values." />
+  <string key="Actions.SendEmail.From.Label" value="From" />
+  <string key="Actions.SendEmail.From.Help" value="The e-mail address to use as the sender." />
+  <string key="Actions.SendEmail.To.Label" value="To" />
+  <string key="Actions.SendEmail.To.Help" value="The e-mail address the form data should be sent to." />
+  <string key="Actions.SendEmail.Subject.Label" value="Subject" />
+  <string key="Actions.SendEmail.Subject.Help" value="The email subject. If this field is left empty, the form name will be used." />
+
+  <string key="SecurityHandlers.Https.Label" value="Secure (https encrypted)" />
+  <string key="SecurityHandlers.Default.Label" value="Default" />
+
+  <string key="Browse.TimeStamp" value="Time Stamp" />
+</strings>

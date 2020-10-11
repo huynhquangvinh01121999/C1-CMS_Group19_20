@@ -1,0 +1,70 @@
+﻿.blog-title {
+    margin-bottom: 25px;
+}
+.blog-info {
+   margin-bottom: 25px;
+}
+
+.blog-date {
+    margin-right: 20px;
+}
+
+.blog-author-picture {
+    max-width: 35px;
+    margin-right: 10px;
+    float: left;
+}
+.blog-tags {
+    margin: 20px 0;
+}
+
+.blog-addthis .addthis_counter
+{
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+      box-sizing: content-box;
+}
+
+.blog-img {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.blog-tags-cloud a:hover {
+    text-decoration: none;
+}
+
+.blog-comments-count, .blog-comments-count a {
+    font-size: 12px;
+    background: url(comment_bulb.png) no-repeat;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.blog-comments-count {
+    background-position: 0px 0px;
+    display: inline-block;
+    margin-left: 4px;
+    padding-left: 8px;
+    text-decoration: none;
+}
+
+    .blog-comments-count a {
+        background-position: right 0px;
+        float: left;
+        padding: 0px 8px 0px 4px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .blog-comments-count:hover {
+        background-position: 0px -21px;
+    }
+
+    .blog-comments-count a:hover {
+        background-position: right -21px;
+    }
+
+
+

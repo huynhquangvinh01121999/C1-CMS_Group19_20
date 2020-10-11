@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Orckestra.StarterSite.Venus.Core" groupName="Orckestra.StarterSite.Venus" version="2.1.0" author="Orckestra A/S" website="https://c1.orckestra.com" description="Venus CoreVenus Core" installDate="2020-10-11T14:33:20.2403541+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="false" flushOnCompletion="true" reloadConsoleOnCompletion="false" systemLocking="hard" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

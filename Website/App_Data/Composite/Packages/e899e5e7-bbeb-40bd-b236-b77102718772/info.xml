@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Composite.Navigation.LanguageSwitcher.Razor" groupName="Composite.Navigation" version="2.0.7" author="Composite" website="http://composite.net" description="Razor based language switcherRazor based language switcher" installDate="2020-10-11T14:32:56.5110892+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="false" reloadConsoleOnCompletion="false" systemLocking="none" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

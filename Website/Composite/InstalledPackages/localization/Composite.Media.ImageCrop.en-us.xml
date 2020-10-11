@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="CropElementAction.Label" value="Crop" />
+  <string key="CropElementAction.ToolTip" value="" />
+  
+  <string key="ImageCropDialog.Title" value="Image Crop" />
+  <string key="ImageCropDialog.SaveOptions" value="Save" />
+  <string key="ImageCropDialog.SaveAsNewFile" value="As a new file" />
+  <string key="ImageCropDialog.Overwrite" value="Overwrite existing file" />
+  <string key="ImageCropDialog.AspectRatio" value="Aspect ratio" />
+
+  <string key="ImageCropDialog.IncorrectSelection.Title" value="Incorrect selection" />
+  <string key="ImageCropDialog.IncorrectSelection.Message" value="Selected area is empty or covers the whole image" />
+
+  <string key="AspectRatio.None" value="Freehand" />
+  <string key="AspectRatio.Landscape" value="Landscape (16:9)" />
+  <string key="AspectRatio.Portrait" value="Portrait (9:16)" />
+</strings>

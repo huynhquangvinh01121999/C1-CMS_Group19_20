@@ -1,0 +1,120 @@
+﻿@inherits RazorFunction
+
+@using System.Reflection
+@using Composite.Core.Types
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A selector control."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue=null)]
+    public string Name { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+    public string Label { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public string Help { get; set; }    
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Required_Label, DefaultValue = false, Help = Localization.Constants.Fields_Parameters_Required_Help)]
+    public bool Required { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Selectors_SelectMultiple_Label, DefaultValue = false, Help = Localization.Constants.Fields_Selectors_SelectMultiple_Help)]
+    public bool SelectMultiple { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Selector_DataTypeName_Label, Help = Localization.Constants.Fields_Selector_DataTypeName_Help)]
+    public string DataTypeName { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Selector_ValueFieldName_Label, Help = Localization.Constants.Fields_Selector_ValueFieldName_Help)]
+    public string ValueFieldName { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Selector_LabelFieldName_Label, Help = Localization.Constants.Fields_Selector_LabelFieldName_Help)]
+    public string LabelFieldName { get; set; }
+}
+
+@{
+    Name = string.IsNullOrEmpty(Name) ? Label : Name;
+    
+    var formContext = FormHelper.GetFormContext();
+    string clientId = formContext.BuildFieldClientId(Name);
+   
+    
+    Type type = TypeManager.GetType(DataTypeName);
+
+    PropertyInfo valueProperty = type.GetProperty(ValueFieldName);
+    PropertyInfo labelProperty = type.GetProperty(LabelFieldName);
+    
+    var items = DataFacade.GetData(type).ToDataList()
+                          .Select(d => new { Value = valueProperty.GetValue(d, null).ToString(), Label = labelProperty.GetValue(d, null).ToString() })
+                          .OrderBy(a => a.Label);
+    
+    var selectedValues = new HashSet<string>();
+
+    if (formContext.IsFormSubmit)
+    {
+        string selectedValue = Request[clientId];
+
+		formContext.Result.Add(Name, Label, typeof(string), selectedValue);
+
+        foreach (var v in (selectedValue ?? "").Split(new[] { ',' }))
+        {
+            selectedValues.Add(v);
+        }
+        
+        // Validation
+        
+        if (Required && string.IsNullOrEmpty(selectedValue))
+        {
+			formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldRequired, Label));
+        }
+        
+        foreach (var value in selectedValues)
+        {
+            if (items.All(i => i.Value != value))
+            {
+                formContext.Errors.Raise(string.Format("Field '{0}'. Posted value is not a part of the collection", Label ?? Name));
+            }
+        }
+    }
+
+	string requiredClass = Required ? "required" : "";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    </head>
+    <body>
+		<div class="form-group @clientId @requiredClass">
+
+			<label for="@clientId" class="control-label">
+				@Label @if (Required) { <abbr title="@Resources.FormBuilder.WCAG_required"></abbr> }
+			</label> 
+
+			<select id="@clientId" name="@clientId" class="form-control @if(Required) { <text>required</text>}"
+				@if(SelectMultiple) { <text>multiple="multiple"</text>} xmlns="http://www.w3.org/1999/xhtml">
+
+				@if (!Required && !SelectMultiple)
+				{
+					<option value=""></option> 
+				}
+    
+				@foreach (var item in items)
+				{
+					<option value="@item.Value" @if (selectedValues.Contains(item.Value))
+												{
+													<text>selected="selected"</text>
+												} >
+						@item.Label
+					</option>
+				}
+			</select>
+    
+			@if(!string.IsNullOrWhiteSpace(Help)) 
+			{
+				<p class="help-block">@Help</p>
+			}
+		</div>
+	</body>
+</html>

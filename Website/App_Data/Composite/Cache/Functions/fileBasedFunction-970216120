@@ -1,0 +1,3 @@
+Composite.Core.Xml.XhtmlDocument,Composite
+False
+A Razor-based function that displays the hierarchy of pages as a tree-like menu.

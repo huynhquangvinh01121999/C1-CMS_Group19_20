@@ -1,0 +1,117 @@
+﻿@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "A function that displays a main menu"; }
+    }
+
+    [FunctionParameter(Label = "Show Home Page", DefaultValue = false)]
+    public bool ShowHomePage { get; set; }
+
+    [FunctionParameter(Label = "Expand on hover",
+                       Help = "When this option is selected menu items will expand on mouse hover and clicks will navigate. When not selected or visitor is using a tablet, menu items will expand on click.",
+                       DefaultValue = true)]
+    public bool ExpandOnHover { get; set; }
+
+    private Guid CurrentPageId { get { return PageRenderer.CurrentPageId; } }
+
+    private List<PageNode> OpenPages(PageNode selectedPageNode)
+    {
+        var openPages = new List<PageNode>();
+        var openPage = selectedPageNode;
+
+        while (openPage != null)
+        {
+            openPages.Add(openPage);
+            openPage = openPage.ParentPage; // crawl up
+        }
+
+        return openPages;
+    }
+}
+@{
+    var pagenodes = Sitemap.CurrentHomePageNode
+        .GetPageNodes(SitemapScope.Level2AndSiblings)
+        .Where(page => !string.IsNullOrEmpty(page.MenuTitle))
+        .ToList();
+
+    if (!pagenodes.Any()) { return; }
+
+    var openPages = OpenPages(CurrentPageNode);
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <ul class="nav navbar-nav mega-menu @(ExpandOnHover ? "mega-menu-expandonhover" : "")">
+        @if (ShowHomePage)
+        {
+            <li>
+                <a href="@HomePageNode.Url">@HomePageNode.MenuTitle</a>
+            </li>
+        }
+
+        @foreach (var page in pagenodes)
+        {
+            var childPages = page.ChildPages.Where(cp => !string.IsNullOrEmpty(cp.MenuTitle)).ToList();
+
+            var isDropDown = childPages.Count > 0;
+
+            <li class="@(isDropDown ? "dropdown" : null)">
+                <a href="@page.Url" class="@(isDropDown ? "dropdown-toggle" : null)" data-toggle="@(isDropDown ? "dropdown" : null)">
+                    @page.MenuTitle
+                    @if (isDropDown)
+                    {
+                        <b class="caret"></b>
+                    }
+                </a>
+                @if (isDropDown)
+                {
+                    <div class="dropdown-menu mega-dropdown-menu ">
+                        <div class="mega-menu-headline">
+                            <a href="@page.Url" title="@page.Title">
+                                @page.Title
+                            </a>
+                            @if (!string.IsNullOrWhiteSpace(page.Description))
+                            {
+                                <div class="description">@page.Description</div>
+                            }
+                        </div>
+                        @NavigationTree(childPages, 2, 10, openPages)
+                    </div>
+                }
+            </li>
+        }
+    </ul>
+</body>
+</html>
+
+@helper NavigationTree(List<PageNode> pages, int pageLevel, int maxLevel, List<PageNode> openPages)
+{
+    if (pages.Count == 0)
+    {
+        return;
+    }
+
+    <ul class="nav level-@pageLevel">
+        @foreach (var subPage in pages)
+        {
+            bool isOpen = openPages.Any(op => op.Id == subPage.Id);
+            bool isSelected = CurrentPageId == subPage.Id;
+
+            var childPages = subPage.ChildPages.Where(p => !string.IsNullOrEmpty(p.MenuTitle)).ToList();
+
+            var hasChildren = childPages.Count > 0;
+
+            <li class="@(isOpen ? "open" : null) @(isSelected ? "active" : null) @(hasChildren ? "has-childs" : null)">
+                <a href="@subPage.Url">@subPage.MenuTitle</a>
+                @if (pageLevel < maxLevel && (isOpen || pageLevel == 2))
+                {
+                    @NavigationTree(childPages, pageLevel + 1, maxLevel, openPages)
+                }
+            </li>
+        }
+    </ul>
+}

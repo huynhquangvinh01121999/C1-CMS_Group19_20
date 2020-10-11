@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Orckestra.Forms.FormBuilder" groupName="Orckestra.Forms" version="1.3.3" author="Orckestra A/S" website="https://c1.orckestra.com/" description="-Allows you to build input forms on pages to collect date from visitors using visual tools." installDate="2020-10-11T14:33:04.9083148+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="true" reloadConsoleOnCompletion="true" systemLocking="hard" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

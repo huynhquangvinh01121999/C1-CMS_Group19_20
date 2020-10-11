@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms:formdefinition xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0">
+  <cms:bindings>
+    <cms:binding name="MediaFile" type="Composite.Data.Types.IMediaFile, Composite" />
+    <cms:binding name="Selection" type="System.Drawing.Rectangle" optional="true" />
+    <cms:binding name="Overwrite" type="System.Boolean" optional="true" />
+    <cms:binding name="AspectRatio" type="Composite.Media.ImageCrop.AspectRatio" optional="true" />
+  </cms:bindings>
+	<cms:layout iconhandle="crop">
+    <!--FieldGroup Label="Crop image"-->
+      <ImageCrop Label="${Composite.Media.ImageCrop,ImageCropDialog.Title}">
+        <ImageCrop.MediaFile>
+          <cms:read source="MediaFile" />
+        </ImageCrop.MediaFile>
+        
+         <ImageCrop.Selection>
+           <cms:bind source="Selection" />
+         </ImageCrop.Selection>
+
+        <ImageCrop.Overwrite>
+          <cms:bind source="Overwrite" />
+        </ImageCrop.Overwrite>
+
+        <ImageCrop.AspectRatio>
+          <cms:bind source="AspectRatio" />
+        </ImageCrop.AspectRatio>
+      </ImageCrop>
+    <!--/FieldGroup-->
+  </cms:layout>
+</cms:formdefinition>

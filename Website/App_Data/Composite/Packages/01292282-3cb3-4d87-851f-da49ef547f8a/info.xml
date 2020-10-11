@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Base Configuration for C1" groupName="Composite" version="2.0.2" author="Composite" website="www.composite.net" description="This package contains the base configuration for Composite C1." installDate="2020-10-11T14:32:56.2377485+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="false" flushOnCompletion="false" reloadConsoleOnCompletion="false" systemLocking="none" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

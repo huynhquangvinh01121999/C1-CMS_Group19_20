@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IPageStructure,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="cd2cc9d8-e711-4349-a4cf-0714a94287eb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f90418c7-9654-4226-81c1-3b4e959f4f39" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="cd2cc9d8-e711-4349-a4cf-0714a94287eb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f90418c7-9654-4226-81c1-3b4e959f4f39" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="cd2cc9d8-e711-4349-a4cf-0714a94287eb" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="f90418c7-9654-4226-81c1-3b4e959f4f39" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="cd2cc9d8-e711-4349-a4cf-0714a94287eb" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="f90418c7-9654-4226-81c1-3b4e959f4f39" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="cd2cc9d8-e711-4349-a4cf-0714a94287eb" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="f90418c7-9654-4226-81c1-3b4e959f4f39" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+              <Key name="PlaceHolderId" value="start" />
+            </Keys>
+            <Keys>
+              <Key name="PageId" value="a3055286-0e90-4b04-99dd-fb1a61dde0bf" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Layout.Navigation.TopLink" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="3710acc6-5747-44a0-90f9-7ea27e744912" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageFolderDefinition,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="9cccc84e-6d9b-4039-9b5d-64083272b0f2" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data/Razor/Orckestra/Web/Html/JumbotronSlides.cshtml" />
+        <File filename="~\App_Data/Razor/Orckestra/Web/Html/Jumbotron.cshtml" />
+        <File filename="~\App_Data/Composite/DynamicTypeForms/Orckestra/Web/Html/JumbotronSlide.xml" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\jquery.cycle2.carousel.min.js" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\jquery.cycle2.min.js" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\jquery.cycle2.tile.js" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\Jumbotron.css" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\jumbotron.png" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\JumbotronSlides.js" />
+        <File filename="~\Frontend\Orckestra\Web\Html\Jumbotron\modernizr.custom.js" />
+        <File filename="~\App_Data\Components\Orckestra\Web\Html\Jumbotron\Jumbotron.xml" />
+        <File filename="~\App_Data\Components\Orckestra\Web\Html\Jumbotron\JumbotronSlides.xml" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type typeId="75c3ab13-5a6a-4e94-850d-602aabc8a8e1" />
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

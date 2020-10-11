@@ -1,0 +1,100 @@
+﻿@inherits RazorFunction
+
+@using Composite.Forms.FormBuilder
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A string selector control."; }
+    }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Name_Label, Help = Localization.Constants.Fields_Parameters_Name_Help, DefaultValue=null)]
+    public string Name { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Label_Label, Help = Localization.Constants.Fields_Parameters_Label_Help)]
+    public string Label { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_PlaceholderText_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_PlaceholderText_Help)]
+    public string PlaceholderText { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Help_Label, DefaultValue = null, Help = Localization.Constants.Fields_Parameters_Help_Help, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public string Help { get; set; }    
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Parameters_Required_Label, DefaultValue = false, Help = Localization.Constants.Fields_Parameters_Required_Help)]
+    public bool Required { get; set; }    
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Selectors_Options_Label, DefaultValue = "Option 1\nOption 2", Help = Localization.Constants.Fields_Selectors_Options_Help, WidgetFunctionName="Composite.Widgets.String.TextArea")]    
+    public string Options { get; set; }
+
+    [FunctionParameter(Label = Localization.Constants.Fields_Selectors_SelectMultiple_Label, DefaultValue = false, Help = Localization.Constants.Fields_Selectors_SelectMultiple_Help)]
+    public bool SelectMultiple { get; set; }
+}
+
+@{
+    Name = string.IsNullOrEmpty(Name) ? Label : Name;
+    
+    var formContext = FormHelper.GetFormContext();
+    string clientId = formContext.BuildFieldClientId(Name);
+
+	string[] options = Options.Replace("\r\n", "\n").Replace("\r", "\n").Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+    var selectedValues = new HashSet<string>();
+
+    if (formContext.IsFormSubmit)
+    {
+        string selectedValue = Request[clientId];
+
+		formContext.Result.Add(Name, Label, typeof(string), selectedValue);
+
+        foreach (var v in (selectedValue ?? "").Split(new[] { ',' }))
+        {
+            selectedValues.Add(v);
+        }
+        
+        // Validation
+        
+        if (Required && string.IsNullOrEmpty(selectedValue))
+        {
+			formContext.Errors.Raise(string.Format(Resources.FormBuilder.ServerValidation_FieldRequired, Label));
+        }
+    }
+
+    string requiredClass = Required ? "required" : "";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    </head>
+    <body>
+		<div class="form-group @clientId @requiredClass">
+
+			<label for="@clientId" class="control-label">
+				@Label @if (Required) { <abbr title="@Resources.FormBuilder.WCAG_required"></abbr> }
+			</label> 
+
+			<select id="@clientId" name="@clientId" class="form-control @requiredClass"
+				@if(SelectMultiple) { <text>multiple="multiple"</text>} xmlns="http://www.w3.org/1999/xhtml">
+
+				@if (!SelectMultiple)
+				{
+					<option value="" class="default">@PlaceholderText</option> 
+				}
+    
+				@foreach (string option in options)
+				{
+					<option @if(selectedValues.Contains(option))
+							{
+								<text>selected="selected"</text>
+							} >
+						@option
+					</option>
+				}
+			</select>
+
+			@if(!string.IsNullOrWhiteSpace(Help)) 
+			{
+				<p class="help-block">@Help</p>
+			}
+		</div>
+	</body>
+</html>

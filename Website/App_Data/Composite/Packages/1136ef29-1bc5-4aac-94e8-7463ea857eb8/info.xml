@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Orckestra.StarterSite.Venus.Templates.Razor" groupName="Orckestra.StarterSite.Venus" version="2.1.0" author="Orckestra" website="https://cms.orckestra.com" description="--" installDate="2020-10-11T14:33:20.1037188+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="true" reloadConsoleOnCompletion="false" systemLocking="hard" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

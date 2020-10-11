@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.PackageLicenseFragmentUninstaller,Composite" />
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Composite\Configuration\Composite.Forms.FormBuilder.xml" />
+        <File filename="~\Composite\InstalledPackages\localization\Composite.Forms.FormBuilder.en-us.xml" />
+        <File filename="~\Composite\InstalledPackages\localization\Composite.Forms.FormBuilder.fr-FR.xml" />
+        <File filename="~\Bin\Composite.Forms.FormBuilder.dll" />
+        <File filename="~\App_GlobalResources\Composite\Forms\FormBuilder.resx" />
+        <File filename="~\App_Data\Components\Orckestra\Forms\FormBuilder.xml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/CAPTCHA.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/CheckBox.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/CheckBoxList.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/DataItemSelector.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Date.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Decoration/Heading.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Decoration/Image.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Decoration/RichText.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Decoration/Separator.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Decoration/Text.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Email.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/FileUpload.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/MultipleFileUpload.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/RadioSelector.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/Selector.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/TextArea.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Fields/TextBox.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Form.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Handlers/HttpsCheck.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Handlers/ListValues.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Handlers/SaveToFile.cshtml" />
+        <File filename="~\App_Data\Razor\Composite\Forms\FormBuilder\Handlers/SendEmail.cshtml" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\ActionEditor.aspx" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\ActionEditor.aspx.cs" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\ActionEditor.aspx.designer.cs" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/ActionEditorWindowBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/AddFieldPopupBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/BlankFieldsBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/FormBuilderPageBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/FormFieldItemBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/FormFieldsBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Bindings/PostbackWindowBinding.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\browse.cshtml" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\browse.css" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Download.ashx" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\FieldEditor.aspx" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\FieldEditor.aspx.cs" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\field_background.png" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Form.aspx" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Form.aspx.cs" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Form.css" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Form.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\FormBuilder.asmx" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/fonts/icomoon.dev.svg" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/fonts/icomoon.eot" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/fonts/icomoon.svg" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/fonts/icomoon.ttf" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/fonts/icomoon.woff" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/index.html" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/license.txt" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/lte-ie7.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/Read Me.txt" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\Icons/style.css" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\jquery-2.0.3.min.js" />
+        <File filename="~\Composite\InstalledPackages\content\views\Composite.Forms.FormBuilder\jquery-ui.min.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\datepicker/bootstrap-datepicker.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\datepicker/datepicker.css" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\fonts/glyphicons-halflings-regular.eot" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\fonts/glyphicons-halflings-regular.svg" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\fonts/glyphicons-halflings-regular.ttf" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\fonts/glyphicons-halflings-regular.woff" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\Form.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/css/jquery.fileupload-noscript.css" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/css/jquery.fileupload-ui-noscript.css" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/css/jquery.fileupload-ui.css" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/css/jquery.fileupload.css" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/img/loading.gif" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/img/progressbar.gif" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/cors/jquery.postmessage-transport.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/cors/jquery.xdr-transport.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload-angular.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload-image.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload-jquery-ui.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload-process.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload-ui.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload-validate.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.fileupload.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/jquery.iframe-transport.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/load-image.all.min.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\jQuery-File-Upload/js/vendor/jquery.ui.widget.js" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\Styles/Composite.Forms.FormBuilder.less" />
+        <File filename="~\Frontend\Composite\Forms\FormBuilder\Styles/FormBuilderPreview.less" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller,Composite">
+      <Uninstall xsltFilePath="~\Composite.config\Uninstall.xsl" xmlns="" />
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\Bin\ICSharpCode.SharpZipLib.dll" version="0.86.0.518" />
+        <File filename="~\Bin\Microsoft.WindowsAzure.Storage.dll" version="7.2.1.0" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

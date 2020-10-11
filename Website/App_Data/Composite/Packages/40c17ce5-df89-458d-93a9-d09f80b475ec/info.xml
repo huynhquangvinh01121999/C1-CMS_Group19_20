@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Orckestra.Web.Html.Jumbotron" groupName="Orckestra.Web" version="1.0.2" author="Orckestra A/S" website="https://c1.orckestra.com/" description="The Jumbotron Slides function uses Cycle2 JQuery PluginShow Jumbotron or Jumbotron Slides page blocks." installDate="2020-10-11T14:33:18.0005526+07:00" installedBy="admin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="true" reloadConsoleOnCompletion="false" systemLocking="hard" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

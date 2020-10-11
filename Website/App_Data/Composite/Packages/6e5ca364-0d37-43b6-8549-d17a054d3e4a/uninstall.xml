@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data\Media\1a607c2f-77fe-4ffc-9d14-30b83a94e081" />
+        <File filename="~\App_Data\Media\393eeb79-ec4b-4a36-ab03-1b71e17112e2" />
+        <File filename="~\App_Data\Media\9fc7a81f-e800-48c1-993c-ffbcbe67c244" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="">
+        <Type type="Composite.Data.Types.IMediaFileData,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="1a607c2f-77fe-4ffc-9d14-30b83a94e081" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="393eeb79-ec4b-4a36-ab03-1b71e17112e2" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="9fc7a81f-e800-48c1-993c-ffbcbe67c244" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IMediaFolderData,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="5ce19df0-46f8-44a9-85de-67c17cebbbb2" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageFolderDefinition,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="c6e92190-98b3-4220-aa01-6e426d5d6afa" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPageStructure,Composite" dataScopeIdentifier="public">
+          <Datas>
+            <Keys>
+              <Key name="Id" value="20d14662-e83e-4ee1-bbc9-afd9b2f88f34" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="20d14662-e83e-4ee1-bbc9-afd9b2f88f34" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="20d14662-e83e-4ee1-bbc9-afd9b2f88f34" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="20d14662-e83e-4ee1-bbc9-afd9b2f88f34" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="PageId" value="20d14662-e83e-4ee1-bbc9-afd9b2f88f34" />
+              <Key name="PlaceHolderId" value="content" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Lists.Profiles.Profile" dataScopeIdentifier="administrated">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="0a0c4f03-9fb5-40cc-99b4-f3ba7a303190" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="2c23f5cd-e95c-409f-809f-607cbc1e5cef" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="48b8d779-c995-4a2d-8b5d-4ee6795ac6c4" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="5398ce99-f8de-4789-a6d5-4a8aa115962c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b8b88b17-225e-4e0a-9f7e-06c3d30b0bd6" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="cdc20a36-bd90-465e-8361-5cae78c28c0b" />
+            </Keys>
+          </Datas>
+        </Type>
+        <Type type="Composite.Lists.Profiles.Profile" dataScopeIdentifier="public">
+          <Datas locale="vi-VN">
+            <Keys>
+              <Key name="Id" value="0a0c4f03-9fb5-40cc-99b4-f3ba7a303190" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="2c23f5cd-e95c-409f-809f-607cbc1e5cef" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="48b8d779-c995-4a2d-8b5d-4ee6795ac6c4" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="5398ce99-f8de-4789-a6d5-4a8aa115962c" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="b8b88b17-225e-4e0a-9f7e-06c3d30b0bd6" />
+            </Keys>
+            <Keys>
+              <Key name="Id" value="cdc20a36-bd90-465e-8361-5cae78c28c0b" />
+            </Keys>
+          </Datas>
+        </Type>
+      </Types>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.PackageLicenseFragmentUninstaller,Composite" />
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller,Composite">
+      <Uninstall xsltFilePath="~\Config\Uninstall.xsl" xmlns="" />
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\Bin\Composite.Media.ImageCrop.dll" />
+        <File filename="~\Composite\InstalledPackages\content\forms\Composite.Media.ImageCrop\ImageCrop.xml" />
+        <File filename="~\Composite\InstalledPackages\controls\FormsControls\Composite.Media.ImageCrop\ImageCrop.ascx" />
+        <File filename="~\Composite\InstalledPackages\controls\FormsControls\Composite.Media.ImageCrop\ImageCrop.css" />
+        <File filename="~\Composite\InstalledPackages\controls\FormsControls\Composite.Media.ImageCrop\ImageCrop.js" />
+        <File filename="~\Composite\InstalledPackages\localization\Composite.Media.ImageCrop.en-us.xml" />
+        <File filename="~\Composite\InstalledPackages\localization\Composite.Media.ImageCrop.fr-FR.xml" />
+        <File filename="~\App_Data\Composite\Configuration\Composite.Media.ImageCrop.xml" />
+      </Files>
+    </Add>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller,Composite">
+      <Types xmlns="" />
+    </Add>
+    <Add uninstallerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentUninstaller,Composite.Localization.C1Console.FragmentInstaller" />
+  </PackageFragmentUninstallers>
+</PackageInstaller>

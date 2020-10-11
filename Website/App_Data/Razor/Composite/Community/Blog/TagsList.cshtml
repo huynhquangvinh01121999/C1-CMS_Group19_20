@@ -1,0 +1,50 @@
+﻿@using Composite.Community.Blog
+@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Displays the list of the tags and the number of blog entries with these tags."; }
+    }
+
+    [FunctionParameter(Label = "Blog page", Help = "The page with the blog added.", DefaultValue = null)]
+    public DataReference<IPage> BlogPage { get; set; }
+
+    [FunctionParameter(Label = "Show tags from all blogs", Help = "If 'true', tags from all blogs available on this website will be shown; otherwise, only from the current blog. 'false' by default", DefaultValue = false)]
+    public bool IsGlobal { get; set; }
+
+    private int MinFontSize = 100;
+    private int MaxFontSize = 150;
+}
+@{
+    var landingPage = (BlogPage == null && IsGlobal) ? CurrentPageNode : BlogPage == null ? CurrentPageNode : Sitemap.GetPageNodeById(BlogPage.Data.Id);
+    var tags = BlogFacade.GetTagCloud(MinFontSize, MaxFontSize, BlogPage, IsGlobal).OrderBy(t => t.Title);
+    var PathInfo = Composite.Core.Routing.Pages.C1PageRoute.GetPathInfo();
+    string tagStr = string.Empty;
+    if (PathInfo != null)
+    {
+        var parts = PathInfo.Split('/');
+        if (parts.Length == 2)
+        {
+            tagStr = parts[1];
+        }
+    }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+</head>
+<body>
+    <div class="blog-tags-cloud list-group">
+        @foreach (var tag in tags)
+        {
+            <a title="@tag.Title"
+               class="list-group-item @(tagStr.ToLower() == tag.Title.ToLower() ? "active" : string.Empty)"
+               href="@landingPage.Url/@BlogFacade.Encode(tag.Title)">
+                @tag.Title<span class="badge">@tag.Rel</span>
+            </a>
+        }
+    </div>
+</body>
+</html>
+
